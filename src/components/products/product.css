@@ -1,0 +1,42 @@
+.productsButton{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.products {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: center;
+    background-color:white;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    padding: 5px;
+
+}
+.card-body {
+    display: flex;
+    width: 240px;
+    height: 240px;
+    text-align: center;
+
+}
+.card-title {
+    text-align: center;
+     justify-content: space-between;
+}
+.card-edit {
+    background-color: green;
+    color: white;
+    align-content: center;
+}
+.card-delete {
+    background-color:red;
+    color: white;
+}
+.btn-success {
+    background-color: blue;
+    color: white;
+}
