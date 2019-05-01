@@ -1,50 +1,61 @@
-import React, { Component } from 'react'
-import "./product.css"
+import React, { Component } from "react";
+import ProductManager from "../../modules/ProductManager";
+import "./product.css";
 
-export default class ProductForm extends Component {
-    // Set initial State
-    state = {
-        name: "",
-        description: "",
-        productTypeId: "",
-        quantity: ""
-    }
 
-    // Update state whenever an input field is edited
-  handleFieldChange = (evt) => {
-    const stateToChange = {};
-    stateToChange[evt.target.id] = evt.target.value;
-    this.setState(stateToChange);
+export default class ProductEditForm extends Component {
+  //Set initial State
+  state = {
+    name: "",
+    description: "",
+    quanitity: ""
   };
-  constructNewProduct = evt => {
-    evt.preventDefault();
-      const newProducts = {
+
+  handleFieldChange = evt => {
+    const stateToChange = {};
+    stateToChange[evt.target.id] = evt.target.value
+    this.setState(stateToChange)
+  };
+
+  updateExistingProduct = evt => {
+    evt.preventDefault()
+
+    if (this.state.product === "") {
+      window.alert("Please enter edit Product");
+    } else {
+      const editProduct = {
+        id: this.props.match.params.productId,
         name: this.state.name,
         description: this.state.description,
-        productTypeId: this.state.productTypeId,
         quanitity: this.state.quanitity
-        // Make sure the product Id is saved to the database
-      }
-
-      // Create the products and redirect user to products list
-      this.props.postProduct(newProducts)
-        .then(() => this.props.history.push("/products"));
-
+      };
+      this.props.editProduct(editProduct)
+        .then(() => this.props.history.push("/product"));
+    }
+  };
+  componentDidMount() {
+    ProductManager.getProduct(this.props.match.params.productId)
+      .then(product => {
+        this.setState({
+          name: product.name,
+          description: product.description,
+          quanitity: product.quanitity
+        });
+      });
   }
-
   render() {
     return (
       <React.Fragment>
         <form className="productForm">
           <div className="form-group">
-            <label htmlFor="name">product Name</label>
+            <label htmlFor="name">Edit Name</label>
             <input
               type="text"
               required
               className="form-control"
               onChange={this.handleFieldChange}
               id="name"
-              placeholder=""
+              value ={this.state.name}
             />
           </div>
           <div className="form-group">
@@ -55,7 +66,7 @@ export default class ProductForm extends Component {
               className="form-control"
               onChange={this.handleFieldChange}
               id="description"
-              placeholder=""
+              value ={this.state.description}
             />
           </div>
           <div className="form-group">
@@ -73,22 +84,23 @@ export default class ProductForm extends Component {
             </select>
           </div>
           <div className="form-group">
-            <label htmlFor="Qty">Qty</label>
+            <label htmlFor="qty">Quanitity</label>
             <input
               type="text"
               required
               className="form-control"
               onChange={this.handleFieldChange}
               id="quanitity"
-              placeholder=""
+              value={this.state.quanitity}
             />
           </div>
+
           <button
             type="submit"
-            onClick={this.constructNewProduct}
+            onClick={this.updateExistingProduct}
             className="btn btn-primary"
           >
-            Submit
+            Update
           </button>
         </form>
       </React.Fragment>

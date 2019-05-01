@@ -6,6 +6,7 @@ import ProductForm from "./products/ProductForm"
 import InventoryList from "./inventory/InventoryList"
 import ShippingList from "./shipping/ShippingList"
 import ProductManager from "../modules/ProductManager"
+import ProductEditForm from './products/ProductEditForm';
 
 
 export default class ApplicationViews extends Component {
@@ -29,16 +30,16 @@ export default class ApplicationViews extends Component {
                 this.setState({ products: products })
             )
     }
-    postPost = (newProducts) => {
+    postProduct = (newProducts) => {
         return ProductManager.postProduct(newProducts)
-            .then(() => ProductManager.getAllproduct())
+            .then(() => ProductManager.getAllProduct())
             .then(products =>
                 this.setState({
                     products: products
                 })
             );
     }
-    editPost = (editedProducts) => {
+    editProduct = (editedProducts) => {
         return ProductManager.putProduct(editedProducts)
             .then(() => ProductManager.getAllProduct())
             .then(products => {
@@ -59,8 +60,13 @@ export default class ApplicationViews extends Component {
                 <Route path="/products/new" render={(props) => {
                     return <ProductForm {...props}
                         postProduct={this.postProduct}
-                        products={this.state.products} />
+                        products={this.state.product} />
                 }} />
+                <Route
+                    path="/products/:productId(\d+)/edit" render={props => {
+                        return <ProductEditForm {...props} editProduct={this.editProduct} products={this.state.products} />
+                    }}
+                />
                 <Route path="/inventory" render={(props) => {
                     return <InventoryList invetory={this.state.invetory} />
                 }} />

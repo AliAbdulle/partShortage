@@ -1,18 +1,28 @@
 {
-    "users": [
-
-    ],
-    "products": [
-        {
-            "id": 1,
-            "name": "Jessica Younker",
-            "description": "Hamilton Church",
-            "p_typeID": "Shipping",
-            "qty": 5
-
-          }
-
-    ],
-    "productTypes": [
-    ]
+  "users": [],
+  "products": [
+    {
+      "id": 1,
+      "name": "Jessica Younker",
+      "description": "Hamilton Church",
+      "productTypeId": "Shipping",
+      "quanitity": 5
+    },
+    {
+      "id": 2,
+      "name": "Delldd",
+      "description": "Laptopdd",
+      "quanitity": "44"
+    }
+  ],
+  "productType": [
+    {
+      "id": 1,
+      "name": "shipping"
+    },
+    {
+      "id": 2,
+      "name": "inventory"
+    }
+  ]
 }
