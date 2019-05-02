@@ -6,12 +6,12 @@
 }
 .products {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4 , 1fr);
     grid-gap: 15px;
     align-content: center;
     background-color:white;
     text-align: center;
-    width: 80%;
+    width: 100%;
     white-space: nowrap;
     padding: 5px;
 
@@ -37,7 +37,16 @@
     background-color:red;
     color: white;
 } */
+.productButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
 .btn-success {
+    display: flex;
+    justify-content: center;
     background-color: blue;
     color: white;
+
 }

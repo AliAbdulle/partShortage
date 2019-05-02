@@ -8,7 +8,8 @@ export default class ProductEditForm extends Component {
   state = {
     name: "",
     description: "",
-    quanitity: ""
+    productTypeId: "",
+    quantity: ""
   };
 
   handleFieldChange = evt => {
@@ -27,7 +28,8 @@ export default class ProductEditForm extends Component {
         id: this.props.match.params.productId,
         name: this.state.name,
         description: this.state.description,
-        quanitity: this.state.quanitity
+        productTypeId: this.state.productTypeId,
+        quantity: this.state.quantity
       };
       this.props.editProduct(editProduct)
         .then(() => this.props.history.push("/product"));
@@ -39,7 +41,8 @@ export default class ProductEditForm extends Component {
         this.setState({
           name: product.name,
           description: product.description,
-          quanitity: product.quanitity
+          productTypeId: product.productTypeId,
+          quantity: product.quantity
         });
       });
   }
@@ -76,7 +79,7 @@ export default class ProductEditForm extends Component {
               required
               className="form-control"
               onChange={this.handleFieldChange}
-              id="select"
+              id="productTypeId"
               placeholder="">
               <option value="select">Select</option>
               <option value="inventory">Inventory</option>
@@ -90,14 +93,14 @@ export default class ProductEditForm extends Component {
               required
               className="form-control"
               onChange={this.handleFieldChange}
-              id="quanitity"
-              value={this.state.quanitity}
+              id="quantity"
+              value={this.state.quantity}
             />
           </div>
 
           <button
             type="submit"
-            onClick={this.updateExistingProduct}
+            onClick={this.updateExistingProd}
             className="btn btn-primary"
           >
             Update

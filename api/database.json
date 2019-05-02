@@ -2,27 +2,63 @@
   "users": [],
   "products": [
     {
-      "id": 1,
-      "name": "Jessica Younker",
+      "name": "Jessica Younkered",
       "description": "Hamilton Church",
-      "productTypeId": "Shipping",
-      "quanitity": 5
+      "productTypeId": "Inventory",
+      "quantity": "23",
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Delldd",
-      "description": "Laptopdd",
-      "quanitity": "44"
+      "name": "Jessica Younkeredwe",
+      "description": "Laptop Lee",
+      "productTypeId": "Inventory",
+      "quantity": "90",
+      "id": 2
+    },
+    {
+      "name": "NFL Draft",
+      "description": "Laptop",
+      "productTypeId": "Shipping",
+      "quantity": "4",
+      "id": 3
+    },
+    {
+      "name": "alal",
+      "description": "alla",
+      "productTypeId": "Shipping",
+      "quantity": "3",
+      "id": 4
+    },
+    {
+      "name": "Malllow",
+      "description": "ajja",
+      "productTypeId": "Inventory",
+      "quantity": "78",
+      "id": 5
+    },
+    {
+      "name": "Jessica Younkered",
+      "description": "kamad",
+      "productTypeId": "Inventory",
+      "quantity": "",
+      "id": 6
+    },
+    {
+      "name": "Samalin",
+      "description": "Kaman",
+      "productTypeId": "Shipping",
+      "quantity": "32",
+      "id": 7
     }
   ],
-  "productType": [
+  "productTypes": [
     {
       "id": 1,
-      "name": "shipping"
+      "name": "Shipping"
     },
     {
       "id": 2,
-      "name": "inventory"
+      "name": "Inventory"
     }
   ]
 }

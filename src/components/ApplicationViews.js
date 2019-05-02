@@ -18,14 +18,13 @@ export default class ApplicationViews extends Component {
     }
 
     componentDidMount() {
-        ProductManager.getAllProduct().then(product => {
-            this.setState({
-                products: product
-            })
+        ProductManager.getAllProduct().then(products => {
+            this.setState({ products: products })
         })
     }
     deleteProduct = (id) => {
         return ProductManager.deleteProduct(id)
+            .then(() => ProductManager.getAllProduct())
             .then(products =>
                 this.setState({ products: products })
             )
@@ -60,7 +59,7 @@ export default class ApplicationViews extends Component {
                 <Route path="/products/new" render={(props) => {
                     return <ProductForm {...props}
                         postProduct={this.postProduct}
-                        products={this.state.product} />
+                        products={this.state.products} />
                 }} />
                 <Route
                     path="/products/:productId(\d+)/edit" render={props => {

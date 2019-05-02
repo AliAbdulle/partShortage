@@ -22,7 +22,7 @@ export default class ProductForm extends Component {
         name: this.state.name,
         description: this.state.description,
         productTypeId: this.state.productTypeId,
-        quanitity: this.state.quanitity
+        quantity: this.state.quantity
         // Make sure the product Id is saved to the database
       }
 
@@ -65,11 +65,11 @@ export default class ProductForm extends Component {
               required
               className="form-control"
               onChange={this.handleFieldChange}
-              id="select"
+              id="productTypeId"
               placeholder="">
               <option value="select">Select</option>
-              <option value="inventory">Inventory</option>
-              <option value="shipping">Shipping</option>
+              <option value="Inventory">Inventory</option>
+              <option value="Shipping">Shipping</option>
             </select>
           </div>
           <div className="form-group">
@@ -79,7 +79,7 @@ export default class ProductForm extends Component {
               required
               className="form-control"
               onChange={this.handleFieldChange}
-              id="quanitity"
+              id="quantity"
               placeholder=""
             />
           </div>

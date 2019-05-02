@@ -25,7 +25,8 @@ export default class ProductList extends Component {
                 <section className="card-title">
                   <h5> {product.name}</h5>
                   <h6>{product.description}</h6>
-                  <p>{product.quanitity}</p>
+                  <h6>{product.productTypeId}</h6>
+                  <p>{product.quantity}</p>
                   <button
                     onClick={() => this.props.deleteProduct(product.id)}
                     className="card-delete"
