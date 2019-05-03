@@ -13,6 +13,7 @@ export default class ApplicationViews extends Component {
     state = {
         "users": [],
         "products": [],
+        "productTypes":[],
         "inventory": [],
         "Shipping": []
     }
@@ -23,6 +24,7 @@ export default class ApplicationViews extends Component {
         })
     }
     deleteProduct = (id) => {
+        console.log(id)
         return ProductManager.deleteProduct(id)
             .then(() => ProductManager.getAllProduct())
             .then(products =>
@@ -59,7 +61,7 @@ export default class ApplicationViews extends Component {
                 <Route path="/products/new" render={(props) => {
                     return <ProductForm {...props}
                         postProduct={this.postProduct}
-                        products={this.state.products} />
+                        productTypes={this.state.productTypes} />
                 }} />
                 <Route
                     path="/products/:productId(\d+)/edit" render={props => {

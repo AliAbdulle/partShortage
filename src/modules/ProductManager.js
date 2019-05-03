@@ -10,10 +10,10 @@ export default {
     },
 
     deleteProduct(id) {
+        console.log(typeof(id))
         return fetch(`${apiURL}/products/${id}`, {
             method: "DELETE"
         })
-        .then(r => r.json())
         .then(() => this.getAllProduct())
     },
     postProduct(newProducts) {

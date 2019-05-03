@@ -33,6 +33,7 @@ export default class ProductForm extends Component {
   }
 
   render() {
+    console.log(this.props.productTypes)
     return (
       <React.Fragment>
         <form className="productForm">
@@ -59,17 +60,22 @@ export default class ProductForm extends Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="type">Product Type</label>
+            <label htmlFor="productType">Product Type</label>
             <select
-              type="text"
+              defaultValue=""
+              name="productType"
               required
               className="form-control"
-              onChange={this.handleFieldChange}
               id="productTypeId"
-              placeholder="">
-              <option value="select">Select</option>
-              <option value="Inventory">Inventory</option>
-              <option value="Shipping">Shipping</option>
+              onChange={this.handleFieldChange}>
+              <option value="">Select</option>
+            {this.props.productTypes.map(product => {
+              console.log(product)
+              return <option key={product.id} id={product.id} value={product.id}>
+              {product.name}
+              </option>
+
+            })}
             </select>
           </div>
           <div className="form-group">

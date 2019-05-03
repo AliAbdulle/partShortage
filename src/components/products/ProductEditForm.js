@@ -100,7 +100,7 @@ export default class ProductEditForm extends Component {
 
           <button
             type="submit"
-            onClick={this.updateExistingProd}
+            onClick={this.updateExistingProduct}
             className="btn btn-primary"
           >
             Update
