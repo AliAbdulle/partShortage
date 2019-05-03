@@ -3,17 +3,24 @@
   "products": [
     {
       "name": "Jessica Younkered",
-      "description": "Hamilton Church",
-      "productTypeId": 1,
+      "description": "Laptop",
+      "productTypeId": "MacbookAir",
       "quantity": "23",
       "id": 1
     },
     {
-      "name": "Jessica Younkeredwe",
-      "description": "Laptop Lee",
-      "productTypeId": 2,
-      "quantity": "90",
-      "id": 2
+      "id": 2,
+      "name": "Jessica Younkered",
+      "description": "Hamilton Church",
+      "productTypeId": "inventory",
+      "quantity": "3"
+    },
+    {
+      "name": "Jessica Younkered",
+      "description": "Hamilton Church",
+      "productTypeId": "Macbook bro",
+      "quantity": "6",
+      "id": 3
     }
   ],
   "productTypes": [
@@ -26,8 +33,10 @@
       "name": "MacbookAir"
     },
     {
-      "id": 2,
+      "id": 3,
       "name": "Dell"
     }
-  ]
+  ],
+  "inventory": [],
+  "shippngs": []
 }

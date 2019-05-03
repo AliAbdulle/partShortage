@@ -33,7 +33,6 @@ export default class ProductForm extends Component {
   }
 
   render() {
-    console.log(this.props.productTypes)
     return (
       <React.Fragment>
         <form className="productForm">
@@ -69,9 +68,9 @@ export default class ProductForm extends Component {
               id="productTypeId"
               onChange={this.handleFieldChange}>
               <option value="">Select</option>
-            {this.props.productTypes.map(product => {
+              {this.props.productTypes.map(product => {
               console.log(product)
-              return <option key={product.id} id={product.id} value={product.id}>
+              return <option key={product.id} id={product.id} value={product.name}>
               {product.name}
               </option>
 

@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import ProductManager from "../../modules/ProductManager";
-import "./product.css";
-
 
 export default class ProductEditForm extends Component {
   //Set initial State
@@ -22,10 +20,10 @@ export default class ProductEditForm extends Component {
     evt.preventDefault()
 
     if (this.state.product === "") {
-      window.alert("Please enter edit Product");
+      window.alert("Please enter select Product");
     } else {
       const editProduct = {
-        id: this.props.match.params.productId,
+        id: Number (this.props.match.params.productId),
         name: this.state.name,
         description: this.state.description,
         productTypeId: this.state.productTypeId,
@@ -73,17 +71,22 @@ export default class ProductEditForm extends Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="type">Product Type</label>
+            <label htmlFor="productType">Product Type</label>
             <select
-              type="text"
-              required
+              defaultValue=""
+              name="productType"
               className="form-control"
-              onChange={this.handleFieldChange}
               id="productTypeId"
-              placeholder="">
-              <option value="select">Select</option>
-              <option value="inventory">Inventory</option>
-              <option value="shipping">Shipping</option>
+              onChange={this.handleFieldChange}
+              value={this.state.productTypeId}>
+              <option value="">Select</option>
+              {this.props.productTypes.map(product => {
+              console.log(product)
+              return <option key={product.id} id={product.id} value={product.name}>
+              {product.name}
+              </option>
+
+            })}
             </select>
           </div>
           <div className="form-group">
