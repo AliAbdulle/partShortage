@@ -2,25 +2,74 @@
   "users": [],
   "products": [
     {
-      "name": "Jessica Younkered",
-      "description": "Laptop",
-      "productTypeId": "MacbookAir",
-      "quantity": "23",
+      "name": "ASSedwe",
+      "description": "as",
+      "productTypeId": 2,
+      "quantity": 1,
       "id": 1
     },
     {
-      "id": 2,
+      "name": "Jessica Younkeredwe",
+      "description": "Hamilton Church",
+      "productTypeId": 2,
+      "quantity": 3,
+      "id": 5
+    },
+    {
+      "id": 6,
       "name": "Jessica Younkered",
       "description": "Hamilton Church",
-      "productTypeId": "inventory",
-      "quantity": "3"
+      "productTypeId": 1,
+      "quantity": 32
     },
     {
       "name": "Jessica Younkered",
       "description": "Hamilton Church",
-      "productTypeId": "Macbook bro",
-      "quantity": "6",
-      "id": 3
+      "productTypeId": 1,
+      "quantity": 45,
+      "id": 7
+    },
+    {
+      "name": "ASSedwe",
+      "description": "Hamilton Church",
+      "productTypeId": 1,
+      "quantity": 32,
+      "id": 8
+    },
+    {
+      "name": "Jessica Younkeredwe",
+      "description": "alla",
+      "productTypeId": 1,
+      "quantity": 32,
+      "id": 9
+    },
+    {
+      "name": "Omal",
+      "description": "kamad",
+      "productTypeId": 1,
+      "quantity": 32,
+      "id": 10
+    },
+    {
+      "name": "Jessica Younkered",
+      "description": "Hamilton Church",
+      "productTypeId": 1,
+      "quantity": 78,
+      "id": 11
+    },
+    {
+      "name": "Jessica Younkered",
+      "description": "Hamilton Church",
+      "productTypeId": 1,
+      "quantity": 32,
+      "id": 12
+    },
+    {
+      "name": "alal",
+      "description": "Laptop",
+      "productTypeId": 3,
+      "quantity": 32,
+      "id": 13
     }
   ],
   "productTypes": [

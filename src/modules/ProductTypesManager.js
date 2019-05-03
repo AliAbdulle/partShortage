@@ -8,4 +8,4 @@ export default {
     getAllProductTypes() {
         return fetch(`${apiURL}/productTypes`).then(r => r.json())
     }
-}
+} 

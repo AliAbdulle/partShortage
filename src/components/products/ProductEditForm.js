@@ -12,37 +12,37 @@ export default class ProductEditForm extends Component {
 
   handleFieldChange = evt => {
     const stateToChange = {};
-    stateToChange[evt.target.id] = evt.target.value
-    this.setState(stateToChange)
+    stateToChange[evt.target.id] = evt.target.value;
+    this.setState(stateToChange);
   };
 
   updateExistingProduct = evt => {
-    evt.preventDefault()
+    evt.preventDefault();
 
-    if (this.state.product === "") {
+    if (this.state.productId === "") {
       window.alert("Please enter select Product");
     } else {
       const editProduct = {
-        id: Number (this.props.match.params.productId),
+        id: Number(this.props.match.params.productId),
         name: this.state.name,
         description: this.state.description,
-        productTypeId: this.state.productTypeId,
-        quantity: this.state.quantity
+        productTypeId: Number(this.state.productTypeId).name,
+        quantity: Number(this.state.quantity)
       };
       this.props.editProduct(editProduct)
         .then(() => this.props.history.push("/product"));
     }
   };
   componentDidMount() {
-    ProductManager.getProduct(this.props.match.params.productId)
-      .then(product => {
+    ProductManager.getProduct(this.props.match.params.productId).then(product => {
         this.setState({
           name: product.name,
           description: product.description,
           productTypeId: product.productTypeId,
           quantity: product.quantity
         });
-      });
+      }
+    );
   }
   render() {
     return (
@@ -56,7 +56,7 @@ export default class ProductEditForm extends Component {
               className="form-control"
               onChange={this.handleFieldChange}
               id="name"
-              value ={this.state.name}
+              value={this.state.name}
             />
           </div>
           <div className="form-group">
@@ -67,7 +67,7 @@ export default class ProductEditForm extends Component {
               className="form-control"
               onChange={this.handleFieldChange}
               id="description"
-              value ={this.state.description}
+              value={this.state.description}
             />
           </div>
           <div className="form-group">
@@ -78,15 +78,17 @@ export default class ProductEditForm extends Component {
               className="form-control"
               id="productTypeId"
               onChange={this.handleFieldChange}
-              value={this.state.productTypeId}>
+              value={this.state.productTypeId}
+            >
               <option value="">Select</option>
               {this.props.productTypes.map(product => {
-              console.log(product)
-              return <option key={product.id} id={product.id} value={product.name}>
-              {product.name}
-              </option>
-
-            })}
+                console.log(product);
+                return (
+                  <option key={product.id} id={product.id} value={product.id}>
+                    {product.name}
+                  </option>
+                );
+              })}
             </select>
           </div>
           <div className="form-group">

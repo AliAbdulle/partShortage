@@ -15,18 +15,19 @@ export default class ProductForm extends Component {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
+    console.log(stateToChange)
   };
   constructNewProduct = evt => {
     evt.preventDefault();
       const newProducts = {
         name: this.state.name,
         description: this.state.description,
-        productTypeId: this.state.productTypeId,
-        quantity: this.state.quantity
+        productTypeId: Number(this.state.productTypeId),
+        quantity: Number(this.state.quantity)
         // Make sure the product Id is saved to the database
       }
 
-      // Create the products and redirect user to products list
+  
       this.props.postProduct(newProducts)
         .then(() => this.props.history.push("/products"));
 
@@ -69,8 +70,8 @@ export default class ProductForm extends Component {
               onChange={this.handleFieldChange}>
               <option value="">Select</option>
               {this.props.productTypes.map(product => {
-              console.log(product)
-              return <option key={product.id} id={product.id} value={product.name}>
+              // console.log(product)
+              return <option key={product.id} id={product.id} value={product.id}>
               {product.name}
               </option>
 

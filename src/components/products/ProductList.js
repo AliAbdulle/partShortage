@@ -34,8 +34,8 @@ export default class ProductList extends Component {
                     Delete
                   </button>
                   <button
-                    onClick={() =>
-                      this.props.history.push(`/products/${product.id}/edit`)}
+                    onClick={() => {
+                      this.props.history.push(`/products/${product.id}/edit`)}}
                     className="card-edit"
                   >
                     Update
