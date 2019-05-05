@@ -6,7 +6,7 @@ export default {
     },
 
     getAllInventory() {
-        return fetch(`${apiURL}/inventory`).then(r => r.json())
+        return fetch(`${apiURL}/inventory?_expand=productType`).then(r => r.json())
     },
 
     deleteInventory(id) {

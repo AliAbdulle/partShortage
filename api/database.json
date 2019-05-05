@@ -2,74 +2,11 @@
   "users": [],
   "products": [
     {
-      "name": "ASSedwe",
-      "description": "as",
-      "productTypeId": 2,
-      "quantity": 1,
+      "name": "kjhgf",
+      "description": "hjgf",
+      "productTypeId": 1,
+      "quantity": 12,
       "id": 1
-    },
-    {
-      "name": "Jessica Younkeredwe",
-      "description": "Hamilton Church",
-      "productTypeId": 2,
-      "quantity": 3,
-      "id": 5
-    },
-    {
-      "id": 6,
-      "name": "Jessica Younkered",
-      "description": "Hamilton Church",
-      "productTypeId": 1,
-      "quantity": 32
-    },
-    {
-      "name": "Jessica Younkered",
-      "description": "Hamilton Church",
-      "productTypeId": 1,
-      "quantity": 45,
-      "id": 7
-    },
-    {
-      "name": "ASSedwe",
-      "description": "Hamilton Church",
-      "productTypeId": 1,
-      "quantity": 32,
-      "id": 8
-    },
-    {
-      "name": "Jessica Younkeredwe",
-      "description": "alla",
-      "productTypeId": 1,
-      "quantity": 32,
-      "id": 9
-    },
-    {
-      "name": "Omal",
-      "description": "kamad",
-      "productTypeId": 1,
-      "quantity": 32,
-      "id": 10
-    },
-    {
-      "name": "Jessica Younkered",
-      "description": "Hamilton Church",
-      "productTypeId": 1,
-      "quantity": 78,
-      "id": 11
-    },
-    {
-      "name": "Jessica Younkered",
-      "description": "Hamilton Church",
-      "productTypeId": 1,
-      "quantity": 32,
-      "id": 12
-    },
-    {
-      "name": "alal",
-      "description": "Laptop",
-      "productTypeId": 3,
-      "quantity": 32,
-      "id": 13
     }
   ],
   "productTypes": [
@@ -86,6 +23,21 @@
       "name": "Dell"
     }
   ],
-  "inventory": [],
+  "inventory": [
+    {
+      "name": "Latidude",
+      "description": "Laptop",
+      "productTypeId": 3,
+      "quantity": 90,
+      "id": 2
+    },
+    {
+      "name": "Inspirion",
+      "description": "Laptop",
+      "productTypeId": 2,
+      "quantity": 32,
+      "id": 1
+    }
+  ],
   "shippngs": []
 }

@@ -26,11 +26,11 @@ export default class ProductEditForm extends Component {
         id: Number(this.props.match.params.productId),
         name: this.state.name,
         description: this.state.description,
-        productTypeId: Number(this.state.productTypeId).name,
+        productTypeId: Number(this.state.productTypeId),
         quantity: Number(this.state.quantity)
       };
       this.props.editProduct(editProduct)
-        .then(() => this.props.history.push("/product"));
+        .then(() => this.props.history.push("/products"));
     }
   };
   componentDidMount() {
