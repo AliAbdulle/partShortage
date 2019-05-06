@@ -11,7 +11,7 @@ body {
 }
 .products {
     display: grid;
-    grid-template-columns: repeat(2 , 1fr);
+    grid-template-columns: repeat(5 , 1fr);
     grid-gap: 15px;
     align-content: center;
     background-color:white;
@@ -34,6 +34,11 @@ body {
      justify-content: space-between;
 }
 /* .card-edit {
+    background-color: lightsalmon;
+    color: white;
+    align-content: center;
+}
+.card-forword {
     background-color: green;
     color: white;
     align-content: center;

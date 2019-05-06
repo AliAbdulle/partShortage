@@ -4,22 +4,28 @@
     {
       "name": "Jessica Younkered",
       "description": "Hamilton Church",
-      "productTypeId": 2,
-      "quantity": 23,
+      "address": "jdsdjsldjsld",
+      "productTypeId": 1,
+      "phaseTypeId": 0,
+      "quantity": 32,
       "id": 1
     },
     {
       "name": "Jessica Younkered",
-      "description": "Laptop Lee",
-      "productTypeId": 2,
-      "quantity": 4,
+      "description": "Hamilton Church",
+      "address": "da;dljd",
+      "productTypeId": 1,
+      "phaseTypeId": 0,
+      "quantity": 34,
       "id": 2
     },
     {
-      "name": "Jessica Younkered",
-      "description": "Hamilton Church",
+      "name": "qw",
+      "description": "qwqwq",
+      "address": "",
       "productTypeId": 1,
-      "quantity": 23,
+      "phaseTypeId": 1,
+      "quantity": 12,
       "id": 3
     }
   ],
@@ -37,25 +43,18 @@
       "name": "Dell"
     }
   ],
-  "phases": [
+  "phaseTypes": [
     {
       "id": 1,
-      "name": "Inventory"
-
+      "name": "Build Product"
     },
     {
-      "id": 1,
-      "name": "Shipping"
-
-    }
-  ],
-  "inventory": [
+      "id": 2,
+      "name": "Inventory"
+    },
     {
-      "name": "Jessica Younkered",
-      "description": "Laptop",
-      "productTypeId": 3,
-      "quantity": 9932,
-      "id": 2
+      "id": 3,
+      "name": "Shipping"
     }
   ]
 }

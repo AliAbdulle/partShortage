@@ -8,11 +8,13 @@ export default class ProductList extends Component {
 
   state = {
     name: "",
+    image: "",
     description: "",
+    address: "",
     productTypeId: "",
     quantity: "",
     id: "",
-    // grabInfo:false
+    moveToInventory:false
   }
   constructorNewInventory = (evt) => {
     evt.preventDefault();
@@ -23,8 +25,10 @@ export default class ProductList extends Component {
       const newInvId = newInventoryItem.id + 1;
       const newInventory = {
         name: newInventoryItem.name,
+        image: newInventoryItem.image,
         description: newInventoryItem.description,
         productTypeId: Number(newInvId),
+        phaseTypeId: Number(2),
         quantity: Number(newInventoryItem.quantity),
         id: Number(evt.target.id)
       }
@@ -39,6 +43,30 @@ export default class ProductList extends Component {
   // }
 
   render() {
+
+    // {
+    //   this.props.products.map(prdocut => {
+    //     if(products.phaseTypes === 1) {
+    //       return (
+    //         <React.Fragment>
+    //           <div className="productButton">
+    //             <button
+    //               type="button"
+    //               className="btn btn-success"
+    //               onClick={() => {
+    //                 this.props.history.push("/products/new");
+    //               }}
+    //             >
+    //               Please Add New Product!
+    //             </button>
+    //           </div>
+    //         </React.Fragment>
+    //       )
+    //     }
+    // })
+      
+    // }
+
     return (
       <React.Fragment>
         <div className="productButton">
@@ -55,12 +83,16 @@ export default class ProductList extends Component {
 
         <article className="products">
           {this.props.products.map(product => (
+          
             <div key={product.id} className="card">
-              <div className="card-body">
+               <div className="card-body">
                 <section className="card-title">
                   <h5> {product.name}</h5>
+                  <h6>{product.image}</h6>
                   <h6>{product.description}</h6>
+                  <h6>{product.address}</h6>
                   <h6>{product.productType.name}</h6>
+                  {/* <h6>{product.phaseType.name}</h6> */}
                   <p>{product.quantity}</p>
                   <button
                     onClick={() => this.props.deleteProduct(product.id)}
@@ -87,6 +119,8 @@ export default class ProductList extends Component {
                 </section>
               </div>
             </div>
+            
+
           ))}
         </article>
       </React.Fragment>

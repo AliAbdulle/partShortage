@@ -11,22 +11,28 @@ import ProductManager from "../modules/ProductManager";
 import ProductTypesManager from "../modules/ProductTypesManager";
 import InventoryManager from "../modules/InventoryManager";
 import ShippingManager from "../modules/ShippingManager";
+import PhaseTypeManager from "../modules/PhaseTypeManager"
+
+// import "bootstrap/dist/css/bootstrap.min.css"
 
 export default class ApplicationViews extends Component {
   state = {
     users: [],
     products: [],
     productTypes: [],
+    phaseTypes:[],
     inventory: [],
     shipping: []
   };
 
   componentDidMount() {
-    const newState = {};
+    const newState = {}
     ProductManager.getAllProduct()
       .then(products => (newState.products = products))
       .then(() => ProductTypesManager.getAllProductTypes())
       .then(productTypes => (newState.productTypes = productTypes))
+      .then(() => PhaseTypeManager.getAllPhaseTypes())
+      .then(phaseTypes => (newState.phaseTypes = phaseTypes))
       .then(() => InventoryManager.getAllInventory())
       .then(inventory => (newState.inventory = inventory))
       .then(() => ShippingManager.getAllShipping())
@@ -100,6 +106,8 @@ export default class ApplicationViews extends Component {
                 {...props}
                 deleteProduct={this.deleteProduct}
                 products={this.state.products}
+                productTypes={this.state.productTypes}
+                phaseTypes={this.state.phaseTypes}
                 inventory={this.state.inventory}
                 addToInventory={this.addToInventory}
               />
@@ -115,6 +123,8 @@ export default class ApplicationViews extends Component {
                 {...props}
                 postProduct={this.postProduct}
                 productTypes={this.state.productTypes}
+                phaseTypes={this.state.phaseTypes}
+                products={this.state.products}
               />
             );
           }}
@@ -128,6 +138,7 @@ export default class ApplicationViews extends Component {
                 {...props}
                 editProduct={this.editProduct}
                 productTypes={this.state.productTypes}
+                phaseTypes={this.state.phaseTypes}
                 products={this.state.products}
               />
             );

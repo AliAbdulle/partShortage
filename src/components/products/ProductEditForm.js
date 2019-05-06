@@ -5,8 +5,11 @@ export default class ProductEditForm extends Component {
   //Set initial State
   state = {
     name: "",
+    image: "",
     description: "",
+    address: "",
     productTypeId: "",
+    phaseTypeId: "",
     quantity: ""
   };
 
@@ -25,8 +28,11 @@ export default class ProductEditForm extends Component {
       const editProduct = {
         id: Number(this.props.match.params.productId),
         name: this.state.name,
+        image: this.state.image,
         description: this.state.description,
+        address: this.state.address,
         productTypeId: Number(this.state.productTypeId),
+        phaseTypeId: Number(this.state.phaseTypeId),
         quantity: Number(this.state.quantity)
       };
       this.props.editProduct(editProduct)
@@ -38,7 +44,9 @@ export default class ProductEditForm extends Component {
         this.setState({
           name: product.name,
           description: product.description,
+          address: product.address,
           productTypeId: product.productTypeId,
+          // phaseTypeId: product.phaseTypeId,
           quantity: product.quantity
         });
       }
@@ -60,6 +68,17 @@ export default class ProductEditForm extends Component {
             />
           </div>
           <div className="form-group">
+            <label htmlFor="image">Edit Image</label>
+            <input
+              type="file"
+              required
+              className="form-control"
+              onChange={this.handleFieldChange}
+              id="image"
+              value={this.state.image}
+            />
+          </div>
+          <div className="form-group">
             <label htmlFor="description">Description</label>
             <input
               type="text"
@@ -68,6 +87,17 @@ export default class ProductEditForm extends Component {
               onChange={this.handleFieldChange}
               id="description"
               value={this.state.description}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="address">Address</label>
+            <input
+              type="text"
+              required
+              className="form-control"
+              onChange={this.handleFieldChange}
+              id="address"
+              value={this.state.address}
             />
           </div>
           <div className="form-group">

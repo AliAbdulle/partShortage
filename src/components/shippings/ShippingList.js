@@ -6,7 +6,7 @@ export default class ShippingList extends Component {
         return (
             <article>
                 <h1> List</h1>
-                <section>Jessica Younker</section>
+                <section>Jessica Younkersddlasldmsaldjsadlsadlasdmaslkdaskldslkadnsak</section>
                 <section>Jordan Nelson</section>
                 <section>Zoe LeBlanc</section>
                 <section>Blaise Roberts</section>

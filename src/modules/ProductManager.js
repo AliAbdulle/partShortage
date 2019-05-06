@@ -6,7 +6,7 @@ export default {
     },
 
     getAllProduct() {
-        return fetch(`${apiURL}/products?_expand=productType`).then(r => r.json())
+        return fetch(`${apiURL}/products?_expand=productType&_expand=phaseType`).then(r => r.json())
     },
 
     deleteProduct(id) {
