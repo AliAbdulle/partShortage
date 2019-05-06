@@ -5,7 +5,8 @@ import ProductList from "./products/ProductList";
 import ProductForm from "./products/ProductForm";
 import ProductEditForm from "./products/ProductEditForm";
 import InventoryList from "./inventory/InventoryList";
-import ShippingList from "./shipping/ShippingList";
+import InventoryEditForm from "./inventory/InventoryEditForm"
+import ShippingList from "./shippings/ShippingList";
 import ProductManager from "../modules/ProductManager";
 import ProductTypesManager from "../modules/ProductTypesManager";
 import InventoryManager from "../modules/InventoryManager";
@@ -29,7 +30,7 @@ export default class ApplicationViews extends Component {
       .then(() => InventoryManager.getAllInventory())
       .then(inventory => (newState.inventory = inventory))
       .then(() => ShippingManager.getAllShipping())
-      .then(shipping => (newState.shipping = shipping))
+      .then(shippings => (newState.shippings = shippings))
       .then(() => this.setState(newState));
   }
   deleteProduct = id => {
@@ -59,6 +60,21 @@ export default class ApplicationViews extends Component {
   addToInventory = newInventory => {
     return InventoryManager.postInventory(newInventory)
       .then(() => InventoryManager.getAllInventory())
+      .then(inventory => {
+        this.setState({
+          inventory: inventory
+        });
+      });
+  };
+  deleteInventory = id => {
+    console.log(id);
+    return InventoryManager.deleteInventory(id)
+      .then(() => InventoryManager.getAllInventory())
+      .then(inventory => this.setState({ inventory: inventory }));
+  };
+  editInventory = editedInventory => {
+    return ProductManager.putInventory(editedInventory)
+      .then(() => ProductManager.getAllInventory())
       .then(inventory => {
         this.setState({
           inventory: inventory
@@ -121,21 +137,27 @@ export default class ApplicationViews extends Component {
           exact
           path="/inventory"
           render={props => {
-            return <InventoryList inventory={this.state.inventory} />;
-          }}
-        />
-        {/* <Route
-          exact
-          path="products/:productId(\d+)"
-          render={props => {
             return (
-              <Inventory
-                products={this.state.products}
+              <InventoryList
+                deleteInventory={this.deleteInventory}
                 inventory={this.state.inventory}
               />
             );
           }}
-        /> */}
+        />
+        <Route
+          exact
+          path="inventory/:productId(\d+)"
+          render={props => {
+            return (
+              <InventoryEditForm
+                editInventory={this.editInventory}
+                productTypes={this.state.productTypes}
+                inventory={this.state.inventory}
+              />
+            );
+          }}
+        />
         <Route
           path="/shipping"
           render={props => {

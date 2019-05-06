@@ -1,14 +1,6 @@
 {
   "users": [],
-  "products": [
-    {
-      "name": "kjhgf",
-      "description": "hjgf",
-      "productTypeId": 1,
-      "quantity": 12,
-      "id": 1
-    }
-  ],
+  "products": [],
   "productTypes": [
     {
       "id": 1,
@@ -23,21 +15,6 @@
       "name": "Dell"
     }
   ],
-  "inventory": [
-    {
-      "name": "Latidude",
-      "description": "Laptop",
-      "productTypeId": 3,
-      "quantity": 90,
-      "id": 2
-    },
-    {
-      "name": "Inspirion",
-      "description": "Laptop",
-      "productTypeId": 2,
-      "quantity": 32,
-      "id": 1
-    }
-  ],
+  "inventory": [],
   "shippngs": []
 }

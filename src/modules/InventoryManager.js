@@ -26,7 +26,7 @@ export default {
         })
         .then(ship => ship.json())
     },
-    putProduct(editedInventory) {
+    putInventory(editedInventory) {
         return fetch(`${apiURL}/inventory/${editedInventory.id}`, {
           method: "PUT",
           headers: {
