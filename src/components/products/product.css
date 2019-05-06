@@ -1,3 +1,8 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue;
+}
 .productsButton{
     display: flex;
     justify-content: center;
@@ -6,7 +11,7 @@
 }
 .products {
     display: grid;
-    grid-template-columns: repeat(4 , 1fr);
+    grid-template-columns: repeat(2 , 1fr);
     grid-gap: 15px;
     align-content: center;
     background-color:white;

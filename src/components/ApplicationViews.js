@@ -147,7 +147,7 @@ export default class ApplicationViews extends Component {
         />
         <Route
           exact
-          path="inventory/:productId(\d+)"
+          path="inventory/:invId(\d+)/edit"
           render={props => {
             return (
               <InventoryEditForm
