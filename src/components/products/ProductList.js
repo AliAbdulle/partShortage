@@ -44,29 +44,9 @@ export default class ProductList extends Component {
 
   render() {
 
-    // {
+// {
     //   this.props.products.map(prdocut => {
     //     if(products.phaseTypes === 1) {
-    //       return (
-    //         <React.Fragment>
-    //           <div className="productButton">
-    //             <button
-    //               type="button"
-    //               className="btn btn-success"
-    //               onClick={() => {
-    //                 this.props.history.push("/products/new");
-    //               }}
-    //             >
-    //               Please Add New Product!
-    //             </button>
-    //           </div>
-    //         </React.Fragment>
-    //       )
-    //     }
-    // })
-      
-    // }
-
     return (
       <React.Fragment>
         <div className="productButton">
@@ -83,7 +63,6 @@ export default class ProductList extends Component {
 
         <article className="products">
           {this.props.products.map(product => (
-          
             <div key={product.id} className="card">
                <div className="card-body">
                 <section className="card-title">
