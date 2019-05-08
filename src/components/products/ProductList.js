@@ -1,7 +1,6 @@
-
 import React, { Component } from "react";
 import "./product.css";
-// import ProductManager from "../../modules/ProductManager";
+
 
 export default class ProductList extends Component {
 
@@ -13,45 +12,31 @@ export default class ProductList extends Component {
     address: "",
     productTypeId: "",
     quantity: "",
-    id: "",
-    moveToInventory:false
+    id: ""
   }
-  constructorNewInventory = (evt) => {
+  updateExistingComponent = (evt) => {
     evt.preventDefault();
     console.log(evt.target.id)
-    let newInventoryItem = this.props.products.find(product => product.id === Number(evt.target.id))
-
-    if (newInventoryItem !== undefined) {
-      const newInvId = newInventoryItem.id + 1;
-      const newInventory = {
-        name: newInventoryItem.name,
-        image: newInventoryItem.image,
-        description: newInventoryItem.description,
-        productTypeId: Number(newInvId),
-        phaseTypeId: Number(2),
-        quantity: Number(newInventoryItem.quantity),
-        id: Number(evt.target.id)
-      }
-      console.log(newInventory)
-      this.props.addToInventory(newInventory)
-        .then(() => this.props.deleteProduct(newInventory.id))
-        .then(() => this.props.history.push(`/inventory`));
+    let productId = evt.target.id
+    const existingComponent = {
+      id: parseInt(productId),
+      phaseTypeId: 2
     }
+
+    this.props.addToInventory(existingComponent)
+      .then(() => this.props.history.push(`/inventory`));
+      console.log(this.props)
   }
-  // grabInfo = () => {
-  //   this.setState({grabInfo:true})
-  // }
+  
 
   render() {
 
-// {
-    //   this.props.products.map(prdocut => {
-    //     if(products.phaseTypes === 1) {
     return (
       <React.Fragment>
         <div className="productButton">
           <button
             type="button"
+
             className="btn btn-success"
             onClick={() => {
               this.props.history.push("/products/new");
@@ -64,7 +49,7 @@ export default class ProductList extends Component {
         <article className="products">
           {this.props.products.map(product => (
             <div key={product.id} className="card">
-               <div className="card-body">
+              <div className="card-body">
                 <section className="card-title">
                   <h5> {product.name}</h5>
                   <h6>{product.image}</h6>
@@ -89,8 +74,8 @@ export default class ProductList extends Component {
                   </button>
                   <button
                     id={product.id}
-                    onClick={this.constructorNewInventory}
-                    className="card-edit"
+                    onClick={this.updateExistingComponent}
+                    className="card-forword"
                   >
                     {/* {this.state.grabInfo && this.constructorNewInventor} */}
                     Forward
@@ -98,7 +83,7 @@ export default class ProductList extends Component {
                 </section>
               </div>
             </div>
-            
+
 
           ))}
         </article>

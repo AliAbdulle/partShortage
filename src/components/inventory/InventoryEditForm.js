@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import InventoryManager from "../../modules/InventoryManager"
+//import InventoryManager from "../../modules/InventoryManager"
 
 export default class InventoryEditForm extends Component {
   //Set initial State
@@ -35,18 +35,7 @@ export default class InventoryEditForm extends Component {
         .then(() => this.props.history.push("/products"));
     }
   };
-  componentDidMount() {
-    InventoryManager.getInventory(this.props.match.params.invId).then(inv => {
-        this.setState({
-          name: inv.name,
-          description: inv.description,
-          productTypeId: inv.productTypeId,
-          address: inv.address,
-          quantity: inv.quantity
-        });
-      }
-    );
-  }
+
   render() {
     return (
       <React.Fragment>

@@ -9,7 +9,7 @@ export default class ProductForm extends Component {
         description: "",
         address: "",
         productTypeId: "",
-        phaseTypeId:1,
+        phaseTypeId: 1,
         quantity: ""
     }
 
@@ -27,7 +27,7 @@ export default class ProductForm extends Component {
         description: this.state.description,
         address: this.state.address,
         productTypeId: Number(this.state.productTypeId),
-        phaseTypeId: Number(this.state.phaseTypeId),
+         phaseTypeId: Number(this.state.phaseTypeId),
         quantity: Number(this.state.quantity)
         // Make sure the product Id is saved to the database
       }
@@ -55,14 +55,14 @@ export default class ProductForm extends Component {
           <div className="form-group">
             <label htmlFor="image">product Image</label>
             <input
-              type="file"
+              type="url"
               required
               className="form-control"
               onChange={this.handleFieldChange}
               id="image"
               placeholder=""
             />
-            <img src="IMG_5951.jpg"/>
+  
           </div>
           <div className="form-group">
             <label htmlFor="description">Description</label>

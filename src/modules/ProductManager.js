@@ -26,14 +26,24 @@ export default {
         })
         .then(product => product.json())
     },
-    putProduct(editedProducts) {
-        return fetch(`${apiURL}/products/${editedProducts.id}`, {
+    putProduct(changePatch) {
+        return fetch(`${apiURL}/products/${changePatch.id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify(editedProducts)
+          body: JSON.stringify(changePatch)
         }).then(data => data.json());
+      },
+
+      changeComponent(changePatch) {
+          return fetch(`${apiURL}/products/${changePatch.id}`, {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(changePatch)
+          }).then(data => data.json());
+        },
       }
 
-}

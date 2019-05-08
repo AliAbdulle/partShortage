@@ -32,8 +32,9 @@ export default class ProductEditForm extends Component {
         description: this.state.description,
         address: this.state.address,
         productTypeId: Number(this.state.productTypeId),
-        phaseTypeId: Number(this.state.phaseTypeId),
-        quantity: Number(this.state.quantity)
+       phaseTypeId: Number(this.state.phaseTypeId),
+       quantity: Number(this.state.quantity),
+  
       };
       this.props.editProduct(editProduct)
         .then(() => this.props.history.push("/products"));
@@ -43,6 +44,7 @@ export default class ProductEditForm extends Component {
     ProductManager.getProduct(this.props.match.params.productId).then(product => {
         this.setState({
           name: product.name,
+          image: product.image,
           description: product.description,
           address: product.address,
           productTypeId: product.productTypeId,
@@ -70,7 +72,7 @@ export default class ProductEditForm extends Component {
           <div className="form-group">
             <label htmlFor="image">Edit Image</label>
             <input
-              type="file"
+              type="url"
               required
               className="form-control"
               onChange={this.handleFieldChange}
