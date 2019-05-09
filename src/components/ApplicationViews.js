@@ -19,66 +19,67 @@ export default class ApplicationViews extends Component {
     "products": [],
     "inventory": [],
     "shipping": [],
-    "login": ""
-    
+    "login": "",
+    "productTypes":[]
+
   };
 
   componentDidMount() {
-    const newState = {}
-    ProductManager.getAllProduct()
-      .then(products => (newState.products = products))
-      .then(() => ProductTypeManager.getAllProductTypes())
-      .then(productTypes => (newState.productTypes = productTypes))
-      .then(() => this.setState(newState));
+    // const newState = {}
+    // ProductManager.getAllProduct()
+    //   .then(products => (newState.products = products))
+      // .then(() => ProductTypeManager.getAllProductTypes())
+      // .then(productTypes => (newState.productTypes = productTypes))
+    //   .then(() => this.setState(newState));
+    this.loadAllData()
   }
+
+loadAllData = () => {
+  const updataState = {}
+
+  return ProductManager.getAllProduct()
+   .then(products => products.filter(products => products.phaseTypeId === 1 ))
+   .then(products => updataState.products = products)
+   .then(() => ProductManager.getAllProduct())
+   .then(products => products.filter(products => products.phaseTypeId === 2 ))
+   .then(inventory => updataState.inventory = inventory)
+   .then(() => ProductManager.getAllProduct())
+   .then(products => products.filter(products => products.phaseTypeId === 3 ))
+   .then(shipping => updataState.shipping = shipping)
+   .then(() => ProductTypeManager.getAllProductTypes())
+   .then(productTypes => (updataState.productTypes = productTypes))
+   .then(() => this.setState(updataState))
+}
+
   deleteProduct = id => {
     console.log(id);
     return ProductManager.deleteProduct(id)
-      .then(() => ProductManager.getAllProduct())
-      .then(products => this.setState({ products: products }));
+      .then(() => this.loadAllData())
   };
   postProduct = newProducts => {
     return ProductManager.postProduct(newProducts)
-      .then(() => ProductManager.getAllProduct())
-      .then(products =>
-        this.setState({
-          products: products
-        })
-      );
+      .then(() => this.loadAllData())
   };
   editProduct = editedProducts => {
     return ProductManager.putProduct(editedProducts)
-      .then(() => ProductManager.getAllProduct())
-      .then(product => {
-        this.setState({
-          products: product,
-          inventory: product,
-          shipping: product
-        });
-      });
+      .then(() => this.loadAllData())
   };
   addToInventory = (changePatch) => {
     return ProductManager.changeComponent(changePatch)
-    .then(() => ProductManager.getAllProduct())
-    .then(product => {
-      this.setState({
-      products: product,
-      inventory: product,
-      shipping: product
-    })
-  })
+    .then(() => this.loadAllData())
+
   }
 
   render() {
     return (
       <React.Fragment>
-        <Route
+        {/* <Route
           exact
           path="/"
           render={props => {
             return <LoginList login={this.state.login} />;
           }}
-        />
+        /> */}
         <Route
           exact
           path="/products"
@@ -132,7 +133,7 @@ export default class ApplicationViews extends Component {
           render={props => {
             return (
               <InventoryList
-                deleteInventory={this.deleteInventory}
+                deleteInventory={this.deleteProduct}
                 inventory={this.state.inventory}
                 addToInventory= {this.addToInventory}
                 {...props}
@@ -142,14 +143,15 @@ export default class ApplicationViews extends Component {
         />
         <Route
           exact
-          path="inventory/:invId(\d+)/edit"
+          path="/inventory/:productId(\d+)/edit"
           render={props => {
             return (
               <InventoryEditForm
-              deleteInventory={this.deleteInventory}
+                deleteInventory={this.deleteInventory}
                 editInventory={this.editInventory}
                 productTypes={this.state.productTypes}
                 inventory={this.state.inventory}
+                {...props}
               />
             );
           }}
@@ -160,6 +162,13 @@ export default class ApplicationViews extends Component {
             return <ShippingList 
             deleteShipping={this.deleteShipping}
             shipping={this.state.shipping} />;
+          }}
+        />
+          <Route
+          exact
+          path="/"
+          render={props => {
+            return <LoginList login={this.state.login} />;
           }}
         />
       </React.Fragment>

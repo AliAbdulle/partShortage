@@ -17,10 +17,11 @@ export default class ShippingList  extends Component {
       console.log(evt.target.id)
 
       const existingComponent = {
-        phaseTypeId: 1
+        id: evt.target.id,
+        phaseTypeId: 0
       }
 
-      this.props.addToInventory(evt.target.id, existingComponent)
+      this.props.addToInventory(existingComponent)
         .then(() => this.props.history.push(`/`));
     }
 

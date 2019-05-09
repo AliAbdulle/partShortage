@@ -14,11 +14,12 @@ export default class InventoryList  extends Component {
         id: "",
     }
     updateExistingComponent = (evt) => {
+     // debugger
       evt.preventDefault();
       console.log(evt.target.id)
       let itemId = evt.target.id
       const existingComponent = {
-        itemId: parseInt(itemId),
+        id: parseInt(itemId),
         phaseTypeId: 3
       }
 
@@ -57,7 +58,7 @@ export default class InventoryList  extends Component {
                   <button
                     id={item.id}
                     onClick={this.updateExistingComponent}
-                    className="card-edit"
+                    className="card-forword"
                   >
                     {/* {this.state.grabInfo && this.constructorNewInventor} */}
                     Forward

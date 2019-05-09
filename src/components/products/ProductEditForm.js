@@ -48,7 +48,7 @@ export default class ProductEditForm extends Component {
           description: product.description,
           address: product.address,
           productTypeId: product.productTypeId,
-          // phaseTypeId: product.phaseTypeId,
+          phaseTypeId: product.phaseTypeId,
           quantity: product.quantity
         });
       }

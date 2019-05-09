@@ -1,13 +1,15 @@
 import React, { Component } from "react";
-//import InventoryManager from "../../modules/InventoryManager"
+import ProductManager from "../../modules/ProductManager"
 
 export default class InventoryEditForm extends Component {
   //Set initial State
   state = {
     name: "",
+    img: "",
     description: "",
-    productTypeId: "",
     address: "",
+    productTypeId: "",
+    phaseTypeId: "",
     quantity: ""
   };
 
@@ -24,17 +26,33 @@ export default class InventoryEditForm extends Component {
       window.alert("Please enter select Product");
     } else {
       const editInventory = {
-        id: Number(this.props.match.params.invId),
+        id: Number(this.props.match.params.productId),
         name: this.state.name,
+        img: this.state.img,
         description: this.state.description,
-        productTypeId: Number(this.state.productTypeId),
         address: this.state.address,
+        productTypeId: Number(this.state.productTypeId),
+        phaseTypeId: Number(this.state.phaseTypeId),
         quantity: Number(this.state.quantity)
       };
       this.props.editProduct(editInventory)
         .then(() => this.props.history.push("/products"));
     }
   };
+  componentDidMount() {
+    ProductManager.getProduct(this.props.match.params.productId).then(product => {
+        this.setState({
+          name: product.name,
+          img: product.img,
+          description: product.description,
+          address: product.address,
+          productTypeId: product.productTypeId,
+          phaseTypeId: product.phaseTypeId,
+          quantity: product.quantity
+        });
+      }
+    );
+  }
 
   render() {
     return (
@@ -52,6 +70,17 @@ export default class InventoryEditForm extends Component {
             />
           </div>
           <div className="form-group">
+            <label htmlFor="img">Image</label>
+            <input
+              type="text"
+              required
+              className="form-control"
+              onChange={this.handleFieldChange}
+              id="img"
+              value={this.state.img}
+            />
+          </div>
+          <div className="form-group">
             <label htmlFor="description">Description</label>
             <input
               type="text"
@@ -60,6 +89,17 @@ export default class InventoryEditForm extends Component {
               onChange={this.handleFieldChange}
               id="description"
               value={this.state.description}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="address">Address</label>
+            <input
+              type="address"
+              required
+              className="form-control"
+              onChange={this.handleFieldChange}
+              id="address"
+              value={this.state.address}
             />
           </div>
           <div className="form-group">
@@ -82,18 +122,7 @@ export default class InventoryEditForm extends Component {
                 );
               })}
             </select>
-            <div className="form-group">
-            <label htmlFor="address">Address</label>
-            <input
-              type="text"
-              required
-              className="form-control"
-              onChange={this.handleFieldChange}
-              id="address"
-              value={this.state.address}
-            />
-          </div>
-          </div>
+            </div>
           <div className="form-group">
             <label htmlFor="qty">Quanitity</label>
             <input
