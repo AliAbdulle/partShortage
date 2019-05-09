@@ -1,41 +1,71 @@
 {
   "users": [
     {
-      "name": "",
-      "email": "",
-      "password": "",
-      "type": ""
+      "name": "Ali",
+      "email": "test@mail.com",
+      "password": "1234",
+      "userTypeId": 1,
+      "id": 1
+    },
+    {
+      "name": "said",
+      "email": "test2@mail.com",
+      "password": "4562",
+      "userTypeId": 2,
+      "id": 2
+    },
+    {
+      "name": "jama",
+      "email": "test3@mail.com",
+      "password": "9876",
+      "userTypeId": 3,
+      "id": 3
+    }
+  ],
+  "userTypes": [
+    {
+      "id": 1,
+      "name": "Product"
+    },
+    {
+      "id": 2,
+      "name": "Inventory"
+    },
+    {
+      "id": 3,
+      "name": "Shipping"
     }
   ],
   "products": [
     {
-      "id": 1,
-      "name": "Jessica Younkered",
+      "name": "ASSedwe",
+      "img": "asdd",
       "description": "Hamilton Church",
-      "address": "gkjgkg",
-      "productTypeId": 3,
-      "phaseTypeId": 3,
-      "quantity": 312
-    },
-    {
-      "name": "asaj",
-      "img": "asas",
-      "description": "asamm",
-      "address": "asalm",
+      "address": "Homeless",
       "productTypeId": 2,
       "phaseTypeId": 3,
-      "quantity": 12,
+      "quantity": 23,
+      "id": 1
+    },
+    {
+      "name": "Akakak",
+      "img": "alalal",
+      "description": "alalla",
+      "address": "aalalla",
+      "productTypeId": 2,
+      "phaseTypeId": 2,
+      "quantity": 78,
       "id": 2
     },
     {
-      "id": 3,
-      "name": "aska",
-      "img": "saasj",
-      "description": "asaj",
-      "address": "sakk",
-      "productTypeId": 3,
-      "phaseTypeId": 2,
-      "quantity": 56332
+      "name": "fgfh",
+      "img": "jhv",
+      "description": "hjk",
+      "address": "jh",
+      "productTypeId": 1,
+      "phaseTypeId": 1,
+      "quantity": 90,
+      "id": 3
     }
   ],
   "productTypes": [

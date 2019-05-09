@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import LoginManager from "../../modules/ProductManager";
 
 export default class Register extends Component {
   state = {
     name: "",
     email: "",
     password: "",
-    type: ""
+    userTypeId: ""
   };
   handleFieldChange = evt => {
     const stateToChange = {};
@@ -14,36 +13,14 @@ export default class Register extends Component {
     this.setState(stateToChange);
   };
   handleRegister = evt => {
-    evt.preventDefault();
-    LoginManager.getAllUser()
-      .then(newUser => {
-        return newUser.find(
-          user => user.email.toLowerCase() === this.state.email
-        );
-      })
-      .then(matchUser => {
-        if (matchUser) {
-          return window.alert("the account email is exists");
-        } else {
-          let userObject = {
+          let newUser = {
+            name: this.state.name,
             email: this.state.email,
             password: this.state.password,
-            type: this.state.type
-          };
-          this.props
-            .saveRegister(userObject)
-            .then(() => LoginManager.getAllUser())
-            .then(newUser => {
-              return newUser.find(
-                user =>
-                  user.email.toLowerCase() ===
-                  this.state.email.toLocaleLowerCase()
-              );
-            })
-            .then(matchUser => sessionStorage.setItem("userID", matchUser.id))
-            .then(() => this.props.history.push("/products"));
-        }
-      });
+            userTypeId: this.state.userTypeId
+          }
+            this.props.postUser(newUser)
+            .then(() => this.props.history.push("/"));
   };
   render() {
     return (
@@ -79,15 +56,28 @@ export default class Register extends Component {
               id="password"
             />
           </div>
-          <div>
-            <label htmlFor="type">Type</label>
-            <input
-              type="text"
-              required
+          <div className="form-group">
+            <label htmlFor="userType">user Type</label>
+            <select
+              defaultValue=""
+              name="userType"
               className="form-control"
-              onClick={this.handleFieldChange}
-              id="type"
-            />
+              id="userTypeId"
+              onChange={this.handleFieldChange}
+              value={this.state.userTypeId}
+            >
+              <option value="">Select</option>
+              {this.props.userTypes.map(user => {
+                //console.log(product);
+                return (
+                  <option key={user.id} id={user.id} value={user.id}>
+                    {user.name}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
+          <div>
             <button
               type="button"
               onClick={this.handleRegister}

@@ -1,6 +1,5 @@
 import { Route } from "react-router-dom";
 import React, { Component } from "react";
-import LoginList from "./login/Login";
 import ProductList from "./products/ProductList";
 import ProductForm from "./products/ProductForm";
 import ProductEditForm from "./products/ProductEditForm";
@@ -9,11 +8,15 @@ import InventoryEditForm from "./inventory/InventoryEditForm"
 import ShippingList from "./shippings/ShippingList";
 import ProductManager from "../modules/ProductManager";
  import ProductTypeManager from "../modules/ProductTypeManager";
-// import PhaseTypeManager from "../modules/PhaseTypeManager"
+import Login from "./login/Login"
+import Register from "./login/Register";
+import LoginManager from "../modules/LoginManager"
+
 
 // import "bootstrap/dist/css/bootstrap.min.css"
 
 export default class ApplicationViews extends Component {
+  isAuthenticated = () => sessionStorage.getItem("userId") !== null
   state = {
     "users": [],
     "products": [],
@@ -25,12 +28,7 @@ export default class ApplicationViews extends Component {
   };
 
   componentDidMount() {
-    // const newState = {}
-    // ProductManager.getAllProduct()
-    //   .then(products => (newState.products = products))
-      // .then(() => ProductTypeManager.getAllProductTypes())
-      // .then(productTypes => (newState.productTypes = productTypes))
-    //   .then(() => this.setState(newState));
+
     this.loadAllData()
   }
 
@@ -48,6 +46,8 @@ loadAllData = () => {
    .then(shipping => updataState.shipping = shipping)
    .then(() => ProductTypeManager.getAllProductTypes())
    .then(productTypes => (updataState.productTypes = productTypes))
+   .then(() => LoginManager.getAllUsers())
+   .then(users => (updataState.users = users))
    .then(() => this.setState(updataState))
 }
 
@@ -69,23 +69,37 @@ loadAllData = () => {
     .then(() => this.loadAllData())
 
   }
+  postUser = (newUser) => {
+    return LoginManager.postUser(newUser)
+  }
+
+
 
   render() {
     return (
       <React.Fragment>
-        {/* <Route
-          exact
-          path="/"
-          render={props => {
-            return <LoginList login={this.state.login} />;
-          }}
-        /> */}
+        <Route
+        exact
+        path="/"
+        render={props => {
+          return <Login login={this.state.login}
+          {...props} postUser={this.postUser}/>;
+        }}
+      />
+      <Route
+        exact
+        path="/register"
+        render={props => {
+          return <Register users={this.state.users}
+          {...props} postUser={this.postUser}/>;
+        }}
+      />
         <Route
           exact
           path="/products"
           render={props => {
-            return (
-              <ProductList
+          if(this.isAuthenticated()){
+            return <ProductList
                 {...props}
                 deleteProduct={this.deleteProduct}
                 products={this.state.products}
@@ -94,7 +108,7 @@ loadAllData = () => {
                 inventory={this.state.inventory}
                 addToInventory={this.addToInventory}
               />
-            );
+          }
           }}
         />
         <Route
@@ -131,14 +145,14 @@ loadAllData = () => {
           exact
           path="/inventory"
           render={props => {
-            return (
-              <InventoryList
+            if(this.isAuthenticated()){
+            return <InventoryList
                 deleteInventory={this.deleteProduct}
                 inventory={this.state.inventory}
                 addToInventory= {this.addToInventory}
                 {...props}
               />
-            );
+            }
           }}
         />
         <Route
@@ -160,15 +174,7 @@ loadAllData = () => {
           path="/shipping"
           render={props => {
             return <ShippingList 
-            deleteShipping={this.deleteShipping}
             shipping={this.state.shipping} />;
-          }}
-        />
-          <Route
-          exact
-          path="/"
-          render={props => {
-            return <LoginList login={this.state.login} />;
           }}
         />
       </React.Fragment>

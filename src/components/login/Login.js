@@ -5,8 +5,7 @@ import "./login.css";
 export default class Login extends Component {
   state = {
     email: "",
-    password: "",
-    type: ""
+    password: ""
   };
   handleFieldChange = evt => {
     const stateToChange = {};
@@ -15,20 +14,22 @@ export default class Login extends Component {
   };
   handleLogin = evt => {
     evt.preventDefault();
-    return LoginManager.getAllUsers().then(allListUser => {
-      let foundUser = allListUser.find(user =>
+    LoginManager.getAllUsers().then(users => {
+      let loginUser = users.find(user =>
         user.email.toLowerCase() === this.state.email.toLowerCase() &&
-          user.password.toLowerCase() === this.state.password &&
-          user.type.toLowerCase() === this.state.type
+          user.password.toLowerCase() === this.state.password.toLowerCase()
+          //user.userTypeId.toLowerCase() === this.state.userTypeId
       );
-      return foundUser;
-    }).then(matchUser => {
-      if(matchUser){
-        sessionStorage.setItem("userID", Number(matchUser.id))
+      if(loginUser){
+        sessionStorage.setItem("userId", loginUser.id)
         this.props.history.push("/products")
       }
+       if (loginUser) {
+        sessionStorage.setItem("userId", loginUser.id)
+        this.props.history.push("/invetory")
+      }
       else{
-        window.alert("you enter wrong email and password")
+        window.alert("Login information not found. Please try again or register an account.")
       }
     })
   };
@@ -59,7 +60,7 @@ export default class Login extends Component {
                 />
               </label>
               <div>
-                <button type="button" onClick={this.handleFieldChange}>
+                <button type="button" onClick={this.handleLogin}>
                   {" "}
                   Sign In
                 </button>
@@ -67,7 +68,7 @@ export default class Login extends Component {
                 <button
                   type="button"
                   onClick={() => {
-                    this.props.history.push("/register");
+                    this.props.history.push("/register/new");
                   }}
                 >
                   Register
