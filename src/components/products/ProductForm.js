@@ -54,9 +54,9 @@ export default class ProductForm extends Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="image">product Image</label>
+            <label htmlFor="img">product Image</label>
             <input
-              type="img"
+              type="text"
               required
               className="form-control"
               onChange={this.handleFieldChange}

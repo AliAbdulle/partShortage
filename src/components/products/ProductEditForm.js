@@ -5,7 +5,7 @@ export default class ProductEditForm extends Component {
   //Set initial State
   state = {
     name: "",
-    image: "",
+    img: "",
     description: "",
     address: "",
     productTypeId: "",

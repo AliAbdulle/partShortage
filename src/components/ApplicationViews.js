@@ -46,7 +46,7 @@ loadAllData = () => {
    .then(shipping => updataState.shipping = shipping)
    .then(() => ProductTypeManager.getAllProductTypes())
    .then(productTypes => (updataState.productTypes = productTypes))
-   .then(() => LoginManager.getAllUsers())
+   .then(() => LoginManager.getAllUser())
    .then(users => (updataState.users = users))
    .then(() => this.setState(updataState))
 }
@@ -73,8 +73,6 @@ loadAllData = () => {
     return LoginManager.postUser(newUser)
   }
 
-
-
   render() {
     return (
       <React.Fragment>
@@ -98,7 +96,7 @@ loadAllData = () => {
           exact
           path="/products"
           render={props => {
-          if(this.isAuthenticated()){
+          if(this.isAuthenticated() && parseInt(sessionStorage.getItem("userId")) === 1){
             return <ProductList
                 {...props}
                 deleteProduct={this.deleteProduct}
@@ -145,7 +143,7 @@ loadAllData = () => {
           exact
           path="/inventory"
           render={props => {
-            if(this.isAuthenticated()){
+            if(this.isAuthenticated() && parseInt(sessionStorage.getItem("userId")) === 2){
             return <InventoryList
                 deleteInventory={this.deleteProduct}
                 inventory={this.state.inventory}

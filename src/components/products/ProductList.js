@@ -51,7 +51,7 @@ export default class ProductList extends Component {
               <div className="card-body">
                 <section className="card-title">
                   <h5> {product.name}</h5>
-                  <h6>{product.img}</h6>
+                  <img src={product.img} alt="laptop"/>
                   <h6>{product.description}</h6>
                   <h6>{product.address}</h6>
                   <h6>{product.productType.name}</h6>

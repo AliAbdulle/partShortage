@@ -14,11 +14,10 @@ export default class Login extends Component {
   };
   handleLogin = evt => {
     evt.preventDefault();
-    LoginManager.getAllUsers().then(users => {
+    LoginManager.getAllUser().then(users => {
       let loginUser = users.find(user =>
         user.email.toLowerCase() === this.state.email.toLowerCase() &&
           user.password.toLowerCase() === this.state.password.toLowerCase()
-          //user.userTypeId.toLowerCase() === this.state.userTypeId
       );
       if(loginUser){
         sessionStorage.setItem("userId", loginUser.id)
