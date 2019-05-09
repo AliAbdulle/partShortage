@@ -55,6 +55,15 @@
       "productTypeId": 3,
       "phaseTypeId": 1,
       "quantity": 90444
+    },
+    {
+      "id": 20,
+      "name": "khlkhk",
+      "description": "jkjkgg",
+      "address": "gkjgkg",
+      "productTypeId": 2,
+      "phaseTypeId": 2,
+      "quantity": 896
     }
   ],
   "productTypes": [
