@@ -29,32 +29,22 @@
       "quantity": 78897
     },
     {
-      "id": 17,
-      "name": "asasadd",
-      "description": "Ban laksksk",
-      "address": "ssa",
-      "productTypeId": 2,
-      "phaseTypeId": 2,
-      "quantity": 454
-    },
-    {
       "id": 18,
       "name": "Jessica Younkered",
       "description": "js",
       "address": "k",
       "productTypeId": 3,
-      "phaseTypeId": 1,
+      "phaseTypeId": 2,
       "quantity": 763445
     },
     {
       "id": 19,
-      "name": "Kakkakalay",
-      "image": "",
-      "description": "xsaxsbx",
-      "address": "xbnbx",
+      "name": "kakakka",
+      "description": "zjjzj",
+      "address": "zjzjjz",
       "productTypeId": 3,
-      "phaseTypeId": 1,
-      "quantity": 90444
+      "phaseTypeId": 3,
+      "quantity": 671
     }
   ],
   "productTypes": [
