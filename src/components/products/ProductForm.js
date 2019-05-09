@@ -5,7 +5,7 @@ export default class ProductForm extends Component {
     // Set initial State
     state = {
         name: "",
-        image:"",
+        img:"",
         description: "",
         address: "",
         productTypeId: "",
@@ -24,6 +24,7 @@ export default class ProductForm extends Component {
     evt.preventDefault();
       const newProducts = {
         name: this.state.name,
+        img: this.state.img,
         description: this.state.description,
         address: this.state.address,
         productTypeId: Number(this.state.productTypeId),

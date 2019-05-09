@@ -1,12 +1,13 @@
 const apiURL = "http://localhost:5002"
 
-export default {
+
+    const userDate = {
     getUser(id) {
         return fetch(`${apiURL}/users/${id}`).then(user => user.json())
     },
 
     getAllUser() {
-        return fetch(`${apiURL}/users?_expand=productType&_expand=phaseType`).then(users => users.json())
+        return fetch(`${apiURL}/users?_expand=productType&_expand=phaseType`).then(allListUser => allListUser.json())
     },
     postUser(newUser) {
         return fetch(`${apiURL}/users`, {
@@ -19,3 +20,4 @@ export default {
         .then(users => users.json())
     }
 }
+export default userDate

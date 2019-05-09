@@ -1,50 +1,41 @@
 {
-  "users": [],
+  "users": [
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "type": ""
+    }
+  ],
   "products": [
     {
+      "id": 1,
       "name": "Jessica Younkered",
-      "description": "Llal",
-      "address": "ahhh",
+      "description": "Hamilton Church",
+      "address": "gkjgkg",
+      "productTypeId": 3,
+      "phaseTypeId": 3,
+      "quantity": 312
+    },
+    {
+      "name": "asaj",
+      "img": "asas",
+      "description": "asamm",
+      "address": "asalm",
       "productTypeId": 2,
       "phaseTypeId": 3,
-      "quantity": 32,
+      "quantity": 12,
       "id": 2
     },
     {
-      "name": "shakh",
-      "description": "asalhsa",
-      "address": "saalsal.",
-      "productTypeId": 3,
-      "phaseTypeId": 3,
-      "quantity": 76,
-      "id": 6
-    },
-    {
-      "id": 13,
-      "name": "ASJSKAJSHA",
-      "description": "SASANSAK",
-      "address": "SASKAKLSAJ",
-      "productTypeId": 1,
-      "phaseTypeId": 3,
-      "quantity": 78897
-    },
-    {
-      "id": 18,
-      "name": "Jessica Younkered",
-      "description": "js",
-      "address": "k",
+      "id": 3,
+      "name": "aska",
+      "img": "saasj",
+      "description": "asaj",
+      "address": "sakk",
       "productTypeId": 3,
       "phaseTypeId": 2,
-      "quantity": 763445
-    },
-    {
-      "id": 19,
-      "name": "kakakka",
-      "description": "zjjzj",
-      "address": "zjzjjz",
-      "productTypeId": 3,
-      "phaseTypeId": 3,
-      "quantity": 671
+      "quantity": 56332
     }
   ],
   "productTypes": [

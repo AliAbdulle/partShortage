@@ -19,7 +19,7 @@ export default class InventoryEditForm extends Component {
     this.setState(stateToChange);
   };
 
-  updateExistingProduct = evt => {
+  updateExistingInventory = evt => {
     evt.preventDefault();
 
     if (this.state.invId === "") {
@@ -36,7 +36,7 @@ export default class InventoryEditForm extends Component {
         quantity: Number(this.state.quantity)
       };
       this.props.editProduct(editInventory)
-        .then(() => this.props.history.push("/products"));
+        .then(() => this.props.history.push("/inventory"));
     }
   };
   componentDidMount() {
@@ -73,7 +73,6 @@ export default class InventoryEditForm extends Component {
             <label htmlFor="img">Image</label>
             <input
               type="text"
-              required
               className="form-control"
               onChange={this.handleFieldChange}
               id="img"
@@ -136,7 +135,7 @@ export default class InventoryEditForm extends Component {
           </div>
 
           <button
-            type="submit"
+            type="button"
             onClick={this.updateExistingInventory}
             className="btn btn-primary"
           >

@@ -148,7 +148,7 @@ loadAllData = () => {
             return (
               <InventoryEditForm
                 deleteInventory={this.deleteInventory}
-                editInventory={this.editInventory}
+                editProduct={this.editProduct}
                 productTypes={this.state.productTypes}
                 inventory={this.state.inventory}
                 {...props}
