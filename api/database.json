@@ -1,0 +1,179 @@
+{
+  "users": [
+    {
+      "name": "Ali",
+      "email": "test@mail.com",
+      "password": "1234",
+      "userTypeId": 1,
+      "id": 1
+    },
+    {
+      "name": "said",
+      "email": "test2@mail.com",
+      "password": "4562",
+      "userTypeId": 2,
+      "id": 2
+    },
+    {
+      "name": "jama",
+      "email": "test3@mail.com",
+      "password": "9876",
+      "userTypeId": 3,
+      "id": 3
+    },
+    {
+      "name": "Dek",
+      "email": "dek@test.com",
+      "password": "2526",
+      "userTypeId": 1,
+      "id": 4
+    },
+    {
+      "name": "Jessica Younkered lee",
+      "email": "asa@gmail.com",
+      "password": "6754",
+      "userTypeId": 2,
+      "id": 5
+    },
+    {
+      "name": "Jessica Younkered",
+      "email": "ali_said77@hotmail.com",
+      "password": "90876",
+      "userTypeId": 2,
+      "id": 6
+    },
+    {
+      "name": "farax",
+      "email": "farax@gmail.com",
+      "password": "9087",
+      "userTypeId": 1,
+      "id": 7
+    },
+    {
+      "name": "Chris",
+      "email": "chris@gmail.com",
+      "password": "3456",
+      "userTypeId": 1,
+      "id": 8
+    },
+    {
+      "name": "liiban",
+      "email": "like@gmail.com",
+      "password": "5678",
+      "userTypeId": 1,
+      "id": 9
+    }
+  ],
+  "userTypes": [
+    {
+      "id": 1,
+      "name": "Product"
+    },
+    {
+      "id": 2,
+      "name": "Inventory"
+    },
+    {
+      "id": 3,
+      "name": "Shipping"
+    }
+  ],
+  "products": [
+    {
+      "id": 3,
+      "name": "ggg",
+      "description": "Hamilton Church",
+      "address": "gkjgkg",
+      "productTypeId": 1,
+      "phaseTypeId": 3,
+      "quantity": 19
+    },
+    {
+      "id": 4,
+      "name": "asasasasa",
+      "image": "https://media.istockphoto.com/vectors/laptop-computer-icon-vector-id936238068",
+      "description": "aasas",
+      "address": "gkjgkg",
+      "productTypeId": 1,
+      "phaseTypeId": 2,
+      "quantity": 12
+    },
+    {
+      "id": 5,
+      "name": "Jessica Younkered",
+      "description": "Hamilton Church Allass",
+      "address": "gkjgkgwe",
+      "productTypeId": 3,
+      "phaseTypeId": 2,
+      "quantity": 121
+    },
+    {
+      "name": "Jessica Younkered",
+      "img": "aggag",
+      "description": "Hamilton Church",
+      "address": "gkjgkg",
+      "productTypeId": 2,
+      "phaseTypeId": 3,
+      "quantity": 12,
+      "id": 8
+    },
+    {
+      "name": "Jessica Younkered",
+      "img": "aggag",
+      "description": "Hamilton Church",
+      "address": "gkjgkg",
+      "productTypeId": 2,
+      "phaseTypeId": 1,
+      "quantity": 90,
+      "id": 10
+    },
+    {
+      "name": "Jessica Younkered",
+      "img": "aggag",
+      "description": "Hamilton Church",
+      "address": "gkjgkgwe",
+      "productTypeId": 2,
+      "phaseTypeId": 1,
+      "quantity": 12,
+      "id": 11
+    },
+    {
+      "id": 12,
+      "name": "Insprion",
+      "img": "",
+      "description": "3d laptop with great care of the company to check feature",
+      "address": "500 interstate blvd",
+      "productTypeId": 3,
+      "phaseTypeId": 3,
+      "quantity": 43
+    }
+  ],
+  "productTypes": [
+    {
+      "id": 1,
+      "name": "Macbook bro"
+    },
+    {
+      "id": 2,
+      "name": "MacbookAir"
+    },
+    {
+      "id": 3,
+      "name": "Dell"
+    }
+  ],
+  "phaseTypes": [
+    {
+      "id": 1,
+      "name": "Product"
+    },
+    {
+      "id": 2,
+      "name": "Inventory"
+    },
+    {
+      "id": 3,
+      "name": "Shipping"
+    }
+  ]
+}

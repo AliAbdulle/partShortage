@@ -1,0 +1,72 @@
+body {
+    display: flex;
+    justify-content: center;
+    background-color: aliceblue;
+}
+.productsButton{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
+    align-content: center;
+    background-color:white;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    padding: 5px;
+
+}
+.card {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    height: 90%;
+}
+.card-body {
+    display: flex;
+    width: 240px;
+    height: 240px;
+    text-align: center;
+    justify-content: center;
+    padding: 20px;  ;
+
+}
+.card-title {
+    text-align: center;
+     justify-content: space-between;
+}
+/* .card-edit {
+    background-color: lightsalmon;
+    color: white;
+    align-content: center;
+}
+.card-forword {
+    background-color: green;
+    color: white;
+    align-content: center;
+}
+.card-delete {
+    background-color:red;
+    color: white;
+} */
+.productButton {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.btn-success {
+    display: flex;
+    justify-content: center;
+    background-color: blue;
+    color: white;
+
+}
+#img {
+    
+}

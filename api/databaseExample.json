@@ -1,0 +1,50 @@
+{
+    "users": [],
+    "products": [
+      {
+        "name": "Jessica Younkered",
+        "description": "Hamilton Church",
+        "productTypeId": "Inventory",
+        "quantity": "23",
+        "id": 1
+      },
+      {
+        "name": "Jessica Younkeredwe",
+        "description": "Laptop Lee",
+        "productTypeId": "Inventory",
+        "quantity": "90",
+        "id": 2
+      },
+      {
+        "name": "NFL Draft",
+        "description": "Laptop",
+        "productTypeId": "Shipping",
+        "quantity": "4",
+        "id": 3
+      },
+      {
+        "name": "alal",
+        "description": "alla",
+        "productTypeId": "Shipping",
+        "quantity": "3",
+        "id": 4
+      },
+      {
+        "name": "Malllow",
+        "description": "ajja",
+        "productTypeId": "Inventory",
+        "quantity": "78",
+        "id": 5
+      }
+    ],
+    "productTypes": [
+      {
+        "id": 1,
+        "name": "shipping"
+      },
+      {
+        "id": 2,
+        "name": "inventory"
+      }
+    ]
+  }
