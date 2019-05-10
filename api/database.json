@@ -89,25 +89,6 @@
       "quantity": 19
     },
     {
-      "id": 4,
-      "name": "asasasasa",
-      "image": "https://media.istockphoto.com/vectors/laptop-computer-icon-vector-id936238068",
-      "description": "aasas",
-      "address": "gkjgkg",
-      "productTypeId": 1,
-      "phaseTypeId": 2,
-      "quantity": 12
-    },
-    {
-      "id": 5,
-      "name": "Jessica Younkered",
-      "description": "Hamilton Church Allass",
-      "address": "gkjgkgwe",
-      "productTypeId": 3,
-      "phaseTypeId": 2,
-      "quantity": 121
-    },
-    {
       "name": "Jessica Younkered",
       "img": "aggag",
       "description": "Hamilton Church",
@@ -146,6 +127,26 @@
       "productTypeId": 3,
       "phaseTypeId": 3,
       "quantity": 43
+    },
+    {
+      "id": 13,
+      "name": "Make it dual",
+      "img": "aggag",
+      "description": "Light big and jack",
+      "address": "123 church street",
+      "productTypeId": 1,
+      "phaseTypeId": 3,
+      "quantity": 121
+    },
+    {
+      "id": 14,
+      "name": "Fire Ballroom",
+      "img": "lahah",
+      "description": "Game play by big boys",
+      "address": "312 Lebanon Road ",
+      "productTypeId": 2,
+      "phaseTypeId": 2,
+      "quantity": 555
     }
   ],
   "productTypes": [
