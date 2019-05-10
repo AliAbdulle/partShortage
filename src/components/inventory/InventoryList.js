@@ -36,7 +36,7 @@ export default class InventoryList  extends Component {
               <div className="card-body">
                 <section className="card-title">
                   <h5> {item.name}</h5>
-                  <h5>{item.img}</h5>
+                  <img src={item.img} alt="laptop"/>
                   <h6>{item.description}</h6>
                   <h6>{item.address}</h6>
                   <h6>{item.productType.name}</h6>

@@ -55,7 +55,6 @@ export default class ProductList extends Component {
                   <h6>{product.description}</h6>
                   <h6>{product.address}</h6>
                   <h6>{product.productType.name}</h6>
-                  {/* <h6>{product.phaseType.name}</h6> */}
                   <p>{product.quantity}</p>
                   <button
                     onClick={() => this.props.deleteProduct(product.id)}

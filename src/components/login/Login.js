@@ -21,6 +21,7 @@ export default class Login extends Component {
       );
       if(loginUser){
         sessionStorage.setItem("userId", loginUser.id)
+        sessionStorage.setItem("userTypeId",loginUser.userTypeId)
         this.props.history.push("/products")
       }
        if (loginUser) {

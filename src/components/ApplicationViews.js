@@ -23,8 +23,8 @@ export default class ApplicationViews extends Component {
     "inventory": [],
     "shipping": [],
     "login": "",
-    "productTypes":[]
-
+    "productTypes":[],
+    "userTypes":[]
   };
 
   componentDidMount() {
@@ -48,6 +48,8 @@ loadAllData = () => {
    .then(productTypes => (updataState.productTypes = productTypes))
    .then(() => LoginManager.getAllUser())
    .then(users => (updataState.users = users))
+   .then(() => LoginManager.getAllUserTypes())
+   .then(userTypes => (updataState.userTypes = userTypes))
    .then(() => this.setState(updataState))
 }
 
@@ -86,9 +88,11 @@ loadAllData = () => {
       />
       <Route
         exact
-        path="/register"
+        path="/register/new"
         render={props => {
-          return <Register users={this.state.users}
+          return <Register 
+          userTypes={this.state.userTypes}
+          users={this.state.users}
           {...props} postUser={this.postUser}/>;
         }}
       />
@@ -96,7 +100,7 @@ loadAllData = () => {
           exact
           path="/products"
           render={props => {
-          if(this.isAuthenticated() && parseInt(sessionStorage.getItem("userId")) === 1){
+          if(this.isAuthenticated() && parseInt(sessionStorage.getItem("userTypeId")) === 1){
             return <ProductList
                 {...props}
                 deleteProduct={this.deleteProduct}
@@ -143,7 +147,7 @@ loadAllData = () => {
           exact
           path="/inventory"
           render={props => {
-            if(this.isAuthenticated() && parseInt(sessionStorage.getItem("userId")) === 2){
+            if(this.isAuthenticated() && parseInt(sessionStorage.getItem("userTypeId")) === 2){
             return <InventoryList
                 deleteInventory={this.deleteProduct}
                 inventory={this.state.inventory}

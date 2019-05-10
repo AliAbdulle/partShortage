@@ -19,5 +19,10 @@ postUser(newUser) {
  getAllUser() {
 return fetch(`${apiURL}/users?_expand=userType`)
 .then(users => users.json())
+},
+getAllUserTypes() {
+    return fetch(`${apiURL}/userTypes`)
+    .then(users => users.json())
+    }
 }
-}
+

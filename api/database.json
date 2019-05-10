@@ -20,6 +20,48 @@
       "password": "9876",
       "userTypeId": 3,
       "id": 3
+    },
+    {
+      "name": "Dek",
+      "email": "dek@test.com",
+      "password": "2526",
+      "userTypeId": 1,
+      "id": 4
+    },
+    {
+      "name": "Jessica Younkered lee",
+      "email": "asa@gmail.com",
+      "password": "6754",
+      "userTypeId": 2,
+      "id": 5
+    },
+    {
+      "name": "Jessica Younkered",
+      "email": "ali_said77@hotmail.com",
+      "password": "90876",
+      "userTypeId": 2,
+      "id": 6
+    },
+    {
+      "name": "farax",
+      "email": "farax@gmail.com",
+      "password": "9087",
+      "userTypeId": 1,
+      "id": 7
+    },
+    {
+      "name": "Chris",
+      "email": "chris@gmail.com",
+      "password": "3456",
+      "userTypeId": 1,
+      "id": 8
+    },
+    {
+      "name": "liiban",
+      "email": "like@gmail.com",
+      "password": "5678",
+      "userTypeId": 1,
+      "id": 9
     }
   ],
   "userTypes": [
@@ -38,102 +80,72 @@
   ],
   "products": [
     {
-      "name": "ASSedwe",
-      "img": "asdd",
+      "id": 3,
+      "name": "ggg",
       "description": "Hamilton Church",
-      "address": "Homeless",
-      "productTypeId": 2,
-      "phaseTypeId": 3,
-      "quantity": 23,
-      "id": 1
-    },
-    {
-      "name": "Akakak",
-      "img": "alalal",
-      "description": "alalla",
-      "address": "aalalla",
-      "productTypeId": 2,
-      "phaseTypeId": 2,
-      "quantity": 78,
-      "id": 2
-    },
-    {
-      "name": "fgfh",
-      "img": "jhv",
-      "description": "hjk",
-      "address": "jh",
+      "address": "gkjgkg",
       "productTypeId": 1,
-      "phaseTypeId": 2,
-      "quantity": 90,
-      "id": 3
+      "phaseTypeId": 3,
+      "quantity": 19
     },
     {
       "id": 4,
-      "name": "Malku Mulki",
-      "description": "Hamilton Church",
-      "address": "Come here",
-      "productTypeId": 2,
-      "phaseTypeId": 3,
-      "quantity": 9012
+      "name": "asasasasa",
+      "image": "https://media.istockphoto.com/vectors/laptop-computer-icon-vector-id936238068",
+      "description": "aasas",
+      "address": "gkjgkg",
+      "productTypeId": 1,
+      "phaseTypeId": 2,
+      "quantity": 12
     },
     {
       "id": 5,
-      "name": "Mahliwiiw23",
-      "description": "sndnsndn",
+      "name": "Jessica Younkered",
+      "description": "Hamilton Church Allass",
       "address": "gkjgkgwe",
-      "productTypeId": 2,
+      "productTypeId": 3,
       "phaseTypeId": 2,
-      "quantity": 34
+      "quantity": 121
     },
     {
-      "name": "asas",
-      "img": "agagg",
-      "description": "asa",
-      "address": "asa",
+      "name": "Jessica Younkered",
+      "img": "aggag",
+      "description": "Hamilton Church",
+      "address": "gkjgkg",
       "productTypeId": 2,
       "phaseTypeId": 3,
       "quantity": 12,
-      "id": 7
-    },
-    {
-      "name": "asasas",
-      "img": "asas",
-      "description": "asasa",
-      "address": "asas",
-      "productTypeId": 3,
-      "phaseTypeId": 1,
-      "quantity": 23,
       "id": 8
     },
     {
       "name": "Jessica Younkered",
-      "img": "",
-      "description": "23",
+      "img": "aggag",
+      "description": "Hamilton Church",
       "address": "gkjgkg",
-      "productTypeId": 1,
-      "phaseTypeId": 1,
-      "quantity": 23,
-      "id": 9
-    },
-    {
-      "id": 11,
-      "name": "sas",
-      "image": "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjKqNzZoo_iAhVSVK0KHTJyAasQjRx6BAgBEAU&url=https%3A%2F%2Fwww.vexels.com%2Fpng-svg%2Fpreview%2F128132%2Fflat-laptop-icon-design&psig=AOvVaw2nynO-1AUPyaaW47TqYmyw&ust=1557519562920332",
-      "description": "dg",
-      "address": "as",
       "productTypeId": 2,
       "phaseTypeId": 1,
-      "quantity": 34
+      "quantity": 90,
+      "id": 10
     },
     {
       "name": "Jessica Younkered",
-      "img": "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjKqNzZoo_iAhVSVK0KHTJyAasQjRx6BAgBEAU&url=https%3A%2F%2Fwww.vexels.com%2Fpng-svg%2Fpreview%2F128132%2Fflat-laptop-icon-design&psig=AOvVaw2nynO-1AUPyaaW47TqYmyw&ust=1557519562920332",
+      "img": "aggag",
       "description": "Hamilton Church",
-      "address": "sdd",
+      "address": "gkjgkgwe",
       "productTypeId": 2,
       "phaseTypeId": 1,
-      "quantity": 98,
-      "id": 12
+      "quantity": 12,
+      "id": 11
+    },
+    {
+      "id": 12,
+      "name": "Insprion",
+      "img": "",
+      "description": "3d laptop with great care of the company to check feature",
+      "address": "500 interstate blvd",
+      "productTypeId": 3,
+      "phaseTypeId": 3,
+      "quantity": 43
     }
   ],
   "productTypes": [
