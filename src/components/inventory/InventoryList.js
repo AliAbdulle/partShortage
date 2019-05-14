@@ -30,6 +30,7 @@ export default class InventoryList  extends Component {
     render() {
         console.log(this.props)
         return (
+          <div id="wrapper">
             <article className="inventory">
             {this.props.inventory.map(item => (
             <div key={item.id} className="card">
@@ -68,6 +69,7 @@ export default class InventoryList  extends Component {
                   </div>
                  ) )}
             </article>
+            </div>
         );
     }
 }

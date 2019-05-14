@@ -44,7 +44,7 @@ export default class ProductList extends Component {
             Please Add New Product!
           </button>
         </div>
-
+            <div id="wrapper">
         <article className="products">
           {this.props.products.map(product => (
             <div key={product.id} className="card">
@@ -85,6 +85,7 @@ export default class ProductList extends Component {
 
           ))}
         </article>
+        </div>
       </React.Fragment>
     );
   }

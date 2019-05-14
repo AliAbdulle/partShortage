@@ -5,7 +5,7 @@ import "./shipping.css";
 export default class ShippingList  extends Component {
     state = {
         name: "",
-        image: "",
+        img: "",
         description: "",
         address: "",
         productTypeId: "",
@@ -34,7 +34,7 @@ export default class ShippingList  extends Component {
               <div className="card-body">
                 <section className="card-title">
                   <h5> {shipp.name}</h5>
-                  <h5>{shipp.image}</h5>
+                  <img src={shipp.img} alt="laptop"/>
                   <h6>{shipp.description}</h6>
                   <h6>{shipp.address}</h6>
                   <h6>{shipp.productType.name}</h6>

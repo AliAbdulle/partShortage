@@ -3,16 +3,20 @@ import LoginManager from "../../modules/LoginManager";
 import "./login.css";
 
 export default class Login extends Component {
+  //set the state
   state = {
     email: "",
     password: ""
   };
   handleFieldChange = evt => {
+    //this function will handle user input value and set the state to value
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
   };
   handleLogin = evt => {
+    //this function will varaified user information if is matching 
+    //and alert if the enter wrong information
     evt.preventDefault();
     LoginManager.getAllUser().then(users => {
       let loginUser = users.find(user =>
@@ -24,10 +28,11 @@ export default class Login extends Component {
         sessionStorage.setItem("userTypeId",loginUser.userTypeId)
         this.props.history.push("/products")
       }
-       if (loginUser) {
-        sessionStorage.setItem("userId", loginUser.id)
-        this.props.history.push("/invetory")
-      }
+      //  if (loginUser) {
+      //   sessionStorage.setItem("userId", loginUser.id)
+      //   sessionStorage.setItem("userTypeId",loginUser.userTypeId)
+      //   this.props.history.push("/inventory")
+      // }
       else{
         window.alert("Login information not found. Please try again or register an account.")
       }
@@ -35,6 +40,8 @@ export default class Login extends Component {
   };
 
   render() {
+    //clear session storage from last user
+    sessionStorage.clear()
     return (
       <div>
         <div className="card-body">
