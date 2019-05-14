@@ -1,17 +1,12 @@
 body {
     display: flex;
+    flex-flow: row nowrap;
     justify-content: center;
     background-color: aliceblue;
 }
-.productsButton{
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
 .products {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 50px;
     align-content: center;
     background-color:white;
@@ -23,13 +18,13 @@ body {
 }
 .card {
     display: flex;
-    flex-flow: row wrap;
-    width: 100%;
-    height: 90%;
+    flex-flow: wrap;
+    width: 320px;
+    height: 340px;
 }
 .card-body {
     display: flex;
-    width: 240px;
+    width: 340px;
     height: 240px;
     text-align: center;
     justify-content: center;
@@ -40,7 +35,7 @@ body {
     text-align: center;
      justify-content: space-between;
 }
-/* .card-edit {
+.card-edit {
     background-color: lightsalmon;
     color: white;
     align-content: center;
@@ -53,7 +48,7 @@ body {
 .card-delete {
     background-color:red;
     color: white;
-} */
+}
 .productButton {
     display: flex;
     justify-content: center;
@@ -67,6 +62,8 @@ body {
     color: white;
 
 }
-#img {
-    
+img {
+    width: 130px;
+    height: 100px;
+    border-radius: 20px;
 }

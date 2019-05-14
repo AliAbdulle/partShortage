@@ -28,7 +28,7 @@ export default class ProductEditForm extends Component {
       const editProduct = {
         id: Number(this.props.match.params.productId),
         name: this.state.name,
-        image: this.state.image,
+        img: this.state.img,
         description: this.state.description,
         address: this.state.address,
         productTypeId: Number(this.state.productTypeId),
@@ -44,7 +44,7 @@ export default class ProductEditForm extends Component {
     ProductManager.getProduct(this.props.match.params.productId).then(product => {
         this.setState({
           name: product.name,
-          image: product.image,
+          img: product.img,
           description: product.description,
           address: product.address,
           productTypeId: product.productTypeId,
@@ -76,7 +76,7 @@ export default class ProductEditForm extends Component {
               required
               className="form-control"
               onChange={this.handleFieldChange}
-              id="image"
+              id="img"
               value={this.state.image}
             />
           </div>
