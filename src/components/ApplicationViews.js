@@ -16,13 +16,14 @@ import LoginManager from "../modules/LoginManager"
 // import "bootstrap/dist/css/bootstrap.min.css"
 
 export default class ApplicationViews extends Component {
+  //check for authentication is in the local storage
   isAuthenticated = () => sessionStorage.getItem("userId") !== null
+  // set the state
   state = {
     "users": [],
     "products": [],
     "inventory": [],
     "shipping": [],
-    "login": "",
     "productTypes":[],
     "userTypes":[]
   };
@@ -33,8 +34,9 @@ export default class ApplicationViews extends Component {
   }
 
 loadAllData = () => {
+  // creating an object to store all products and users fetch calls
   const updataState = {}
-
+  // get all data
   return ProductManager.getAllProduct()
    .then(products => products.filter(products => products.phaseTypeId === 1 ))
    .then(products => updataState.products = products)
@@ -54,24 +56,29 @@ loadAllData = () => {
 }
 
   deleteProduct = id => {
+    //this function will delete all product that you created
     console.log(id);
     return ProductManager.deleteProduct(id)
       .then(() => this.loadAllData())
   };
   postProduct = newProducts => {
+    // this function will create products
     return ProductManager.postProduct(newProducts)
       .then(() => this.loadAllData())
   };
   editProduct = editedProducts => {
+    //this function will update all products that created
     return ProductManager.putProduct(editedProducts)
       .then(() => this.loadAllData())
   };
   addToInventory = (changePatch) => {
+    //this function will add  products to inventory
     return ProductManager.changeComponent(changePatch)
     .then(() => this.loadAllData())
 
   }
   postUser = (newUser) => {
+    //this function  will add users
     return LoginManager.postUser(newUser)
   }
 
