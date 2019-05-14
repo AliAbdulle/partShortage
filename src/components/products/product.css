@@ -2,7 +2,7 @@ body {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    background-color: aliceblue;
+    background-color: rgba(116, 150, 136, 0.616);
 }
 .products {
     display: grid;
@@ -65,5 +65,5 @@ body {
 img {
     width: 130px;
     height: 100px;
-    border-radius: 20px;
+    border-radius: 50px;
 }

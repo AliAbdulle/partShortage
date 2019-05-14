@@ -43,7 +43,7 @@ export default class Login extends Component {
     //clear session storage from last user
     sessionStorage.clear()
     return (
-      <div>
+      <div className="main-page">
         <div className="card-body">
           <section className="card-title">
             <form onSubmit={this.checkLogin}>
