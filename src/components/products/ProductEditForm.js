@@ -14,6 +14,7 @@ export default class ProductEditForm extends Component {
   };
 
   handleFieldChange = evt => {
+    // will be change the field that need to change by using their id
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
@@ -32,16 +33,17 @@ export default class ProductEditForm extends Component {
         description: this.state.description,
         address: this.state.address,
         productTypeId: Number(this.state.productTypeId),
-       phaseTypeId: Number(this.state.phaseTypeId),
-       quantity: Number(this.state.quantity),
-  
+        phaseTypeId: Number(this.state.phaseTypeId),
+        quantity: Number(this.state.quantity)
       };
-      this.props.editProduct(editProduct)
+      this.props
+        .editProduct(editProduct)
         .then(() => this.props.history.push("/products"));
     }
   };
   componentDidMount() {
-    ProductManager.getProduct(this.props.match.params.productId).then(product => {
+    ProductManager.getProduct(this.props.match.params.productId).then(
+      product => {
         this.setState({
           name: product.name,
           img: product.img,

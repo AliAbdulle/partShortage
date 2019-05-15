@@ -7,7 +7,7 @@ class NavBar extends Component {
     render() {
         return (
             <nav className="navbar navbar-light light-blue flex-md-nowrap p-0 shadow">
-                <a className="main" href="/">PartStortage </a>
+                <h2><a className="main" href="/">PartShortage </a></h2>
                 <ul className="nav nav-pills nav-fill">
                     <li className="nav-log">
                         <Link className="nav-link kal" to="/">Home</Link>

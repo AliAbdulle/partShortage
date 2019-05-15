@@ -4,6 +4,7 @@ import "./inventory.css";
 
 export default class InventoryList  extends Component {
     state = {
+      //set a state
         name: "",
         image: "",
         description: "",
@@ -14,6 +15,7 @@ export default class InventoryList  extends Component {
         id: "",
     }
     updateExistingComponent = (evt) => {
+      //when this event trigger, will be update next page
      // debugger
       evt.preventDefault();
       console.log(evt.target.id)
@@ -24,7 +26,6 @@ export default class InventoryList  extends Component {
       }
 
       this.props.addToInventory(existingComponent)
-        .then(() => this.props.history.push(`/shipping`));
     }
 
     render() {
@@ -43,6 +44,7 @@ export default class InventoryList  extends Component {
                   <h6>{item.productType.name}</h6>
                   <p>{item.quantity}</p>
                   <button
+                    // remove all the input and card that showing the inventory
                     onClick={() => this.props.deleteInventory(item.id)}
                     className="card-delete"
                   >
@@ -50,6 +52,7 @@ export default class InventoryList  extends Component {
                   </button>
                   <button
                     onClick={() => {
+                      //when the button click  edit form will be open
                       this.props.history.push(`/inventory/${item.id}/edit`)
                     }}
                     className="card-edit"
@@ -59,9 +62,9 @@ export default class InventoryList  extends Component {
                   <button
                     id={item.id}
                     onClick={this.updateExistingComponent}
+                    // will push the card to next page
                     className="card-forword"
                   >
-                    {/* {this.state.grabInfo && this.constructorNewInventor} */}
                     Forward
                   </button>
                   </section>

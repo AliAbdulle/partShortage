@@ -15,7 +15,7 @@ export default class Login extends Component {
     this.setState(stateToChange);
   };
   handleLogin = evt => {
-    //this function will varaified user information if is matching 
+    //this function will varaified user information if is matching
     //and alert if the enter wrong information
     evt.preventDefault();
     LoginManager.getAllUser().then(users => {

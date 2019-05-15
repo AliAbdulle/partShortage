@@ -21,7 +21,7 @@ return fetch(`${apiURL}/users?_expand=userType`)
 .then(users => users.json())
 },
 getAllUserTypes() {
-    return fetch(`${apiURL}/userTypes`)
+    return fetch(`${apiURL}/userTypes   `)
     .then(users => users.json())
     }
 }
