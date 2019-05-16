@@ -26,6 +26,7 @@ export default class ProductList extends Component {
     }
     //adding new card to inventory page
     this.props.addToInventory(existingComponent)
+
       console.log(this.props)
   }
 
@@ -33,7 +34,6 @@ export default class ProductList extends Component {
 
     return (
       <React.Fragment>
-        {/* create form input the user can input new product and post to product list */}
         <div className="productButton">
           <button
             type="button"
@@ -56,7 +56,7 @@ export default class ProductList extends Component {
                   <img src={product.img} alt="laptop"/>
                   <h6>{product.description}</h6>
                   <h6>{product.address}</h6>
-                  <h6>{product.productType.name}</h6>
+                  <h6>{product.productTypeId.name}</h6>
                   <p>{product.quantity}</p>
                   <button
                   //deleting form product page

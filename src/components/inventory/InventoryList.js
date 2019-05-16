@@ -24,7 +24,7 @@ export default class InventoryList  extends Component {
         id: parseInt(itemId),
         phaseTypeId: 3
       }
-
+      // will add to next phaseId
       this.props.addToInventory(existingComponent)
     }
 
@@ -41,7 +41,7 @@ export default class InventoryList  extends Component {
                   <img src={item.img} alt="laptop"/>
                   <h6>{item.description}</h6>
                   <h6>{item.address}</h6>
-                  <h6>{item.productType.name}</h6>
+                  <h6>{item.productTypeId.name}</h6>
                   <p>{item.quantity}</p>
                   <button
                     // remove all the input and card that showing the inventory

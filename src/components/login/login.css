@@ -3,6 +3,7 @@ body {
     justify-content: center;
     background-color: aliceblue;
 }
+
 .card-title{
 flex-flow: column;
 }

@@ -197,8 +197,13 @@ export default class ApplicationViews extends Component {
         <Route
           path="/shipping"
           render={props => {
+            if (
+              this.isAuthenticated() &&
+              parseInt(sessionStorage.getItem("userTypeId")) === 3
+            ) {
             return <ShippingList shipping={this.state.shipping} />;
           }}
+        }
         />
       </React.Fragment>
     );

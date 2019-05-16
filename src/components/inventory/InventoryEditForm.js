@@ -14,12 +14,14 @@ export default class InventoryEditForm extends Component {
   };
 
   handleFieldChange = evt => {
+    // this function will be change the state
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
   };
 
   updateExistingInventory = evt => {
+    //change the edit the field input that previous text
     evt.preventDefault();
 
     if (this.state.invId === "") {

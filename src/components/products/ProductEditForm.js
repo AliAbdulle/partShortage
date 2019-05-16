@@ -21,6 +21,7 @@ export default class ProductEditForm extends Component {
   };
 
   updateExistingProduct = evt => {
+    //change the edit the field input that previous text
     evt.preventDefault();
 
     if (this.state.productId === "") {

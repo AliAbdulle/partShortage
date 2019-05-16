@@ -28,11 +28,6 @@ export default class Login extends Component {
         sessionStorage.setItem("userTypeId",loginUser.userTypeId)
         this.props.history.push("/products")
       }
-      //  if (loginUser) {
-      //   sessionStorage.setItem("userId", loginUser.id)
-      //   sessionStorage.setItem("userTypeId",loginUser.userTypeId)
-      //   this.props.history.push("/inventory")
-      // }
       else{
         window.alert("Login information not found. Please try again or register an account.")
       }
