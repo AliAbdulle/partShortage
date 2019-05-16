@@ -12,3 +12,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.products{
+  background-color: rgba(138, 131, 131, 0.212);
+}
+.inventory{
+  background-color: rgba(138, 131, 131, 0.212);
+}
+.shipping{
+  background-color: rgba(138, 131, 131, 0.212);
+}
+.navbar{
+  background-color: lightgreen;
+
+}

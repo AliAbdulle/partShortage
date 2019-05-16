@@ -13,7 +13,7 @@ export default class ProductForm extends Component {
         quantity: ""
     }
 
-    // Update state whenever an input field is edited
+    // change to state when user input the field
   handleFieldChange = (evt) => {
     const stateToChange = {};
     stateToChange[evt.target.id] = evt.target.value;
@@ -21,6 +21,7 @@ export default class ProductForm extends Component {
     console.log(stateToChange)
   };
   constructNewProduct = evt => {
+    //excepting all the input and post to the json database
     evt.preventDefault();
       const newProducts = {
         name: this.state.name,

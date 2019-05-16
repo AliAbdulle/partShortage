@@ -1,14 +1,16 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
+import "./nav.css"
 
 class NavBar extends Component {
     render() {
         return (
             <nav className="navbar navbar-light light-blue flex-md-nowrap p-0 shadow">
+                <h2><a className="main" href="/">PartShortage </a></h2>
                 <ul className="nav nav-pills nav-fill">
-                    <li className="nav-item">
-                        <Link className="nav-link kal" to="/">PartStortage</Link>
+                    <li className="nav-log">
+                        <Link className="nav-link kal" to="/">Home</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/products">Products</Link>

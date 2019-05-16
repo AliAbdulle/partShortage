@@ -15,7 +15,7 @@ export default class Login extends Component {
     this.setState(stateToChange);
   };
   handleLogin = evt => {
-    //this function will varaified user information if is matching 
+    //this function will varaified user information if is matching
     //and alert if the enter wrong information
     evt.preventDefault();
     LoginManager.getAllUser().then(users => {
@@ -28,11 +28,6 @@ export default class Login extends Component {
         sessionStorage.setItem("userTypeId",loginUser.userTypeId)
         this.props.history.push("/products")
       }
-      //  if (loginUser) {
-      //   sessionStorage.setItem("userId", loginUser.id)
-      //   sessionStorage.setItem("userTypeId",loginUser.userTypeId)
-      //   this.props.history.push("/inventory")
-      // }
       else{
         window.alert("Login information not found. Please try again or register an account.")
       }
@@ -43,7 +38,7 @@ export default class Login extends Component {
     //clear session storage from last user
     sessionStorage.clear()
     return (
-      <div>
+      <div className="main-page">
         <div className="card-body">
           <section className="card-title">
             <form onSubmit={this.checkLogin}>

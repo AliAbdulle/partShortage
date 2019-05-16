@@ -6,6 +6,7 @@ export default class ProductList extends Component {
 
 
   state = {
+    //initials states
     name: "",
     img: "",
     description: "",
@@ -15,6 +16,7 @@ export default class ProductList extends Component {
     id: ""
   }
   updateExistingComponent = (evt) => {
+    //when th button clicked, the inventory page will be appear new card
     evt.preventDefault();
     console.log(evt.target.id)
     let productId = evt.target.id
@@ -22,9 +24,9 @@ export default class ProductList extends Component {
       id: parseInt(productId),
       phaseTypeId: 2
     }
-
+    //adding new card to inventory page
     this.props.addToInventory(existingComponent)
-      .then(() => this.props.history.push(`/inventory`));
+
       console.log(this.props)
   }
 
@@ -54,9 +56,10 @@ export default class ProductList extends Component {
                   <img src={product.img} alt="laptop"/>
                   <h6>{product.description}</h6>
                   <h6>{product.address}</h6>
-                  <h6>{product.productType.name}</h6>
+                  <h6>{product.productTypeId.name}</h6>
                   <p>{product.quantity}</p>
                   <button
+                  //deleting form product page
                     onClick={() => this.props.deleteProduct(product.id)}
                     className="card-delete"
                   >
@@ -64,6 +67,7 @@ export default class ProductList extends Component {
                   </button>
                   <button
                     onClick={() => {
+                      //edite exisiting form
                       this.props.history.push(`/products/${product.id}/edit`)
                     }}
                     className="card-edit"
@@ -72,10 +76,10 @@ export default class ProductList extends Component {
                   </button>
                   <button
                     id={product.id}
+                    //forward to inventory page
                     onClick={this.updateExistingComponent}
                     className="card-forword"
                   >
-                    {/* {this.state.grabInfo && this.constructorNewInventor} */}
                     Forward
                   </button>
                 </section>
