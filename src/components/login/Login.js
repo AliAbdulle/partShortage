@@ -14,6 +14,18 @@ export default class Login extends Component {
     stateToChange[evt.target.id] = evt.target.value;
     this.setState(stateToChange);
   };
+  // this fuction checks usertype and direct to associate task
+  checkUserType = typeId => {
+    if (typeId=== 1){
+      return this.props.history.push("/products")
+    }
+    else if (typeId=== 2){
+      return this.props.history.push("/inventory")
+    }
+    else if (typeId=== 3){
+      return this.props.history.push("/shipping")
+    }
+  }
   handleLogin = evt => {
     //this function will varaified user information if is matching
     //and alert if the enter wrong information
@@ -22,11 +34,12 @@ export default class Login extends Component {
       let loginUser = users.find(user =>
         user.email.toLowerCase() === this.state.email.toLowerCase() &&
           user.password.toLowerCase() === this.state.password.toLowerCase()
-      );
+      )
+
       if(loginUser){
         sessionStorage.setItem("userId", loginUser.id)
         sessionStorage.setItem("userTypeId",loginUser.userTypeId)
-        this.props.history.push("/products")
+        this.checkUserType(loginUser.userTypeId)
       }
       else{
         window.alert("Login information not found. Please try again or register an account.")
@@ -39,10 +52,11 @@ export default class Login extends Component {
     sessionStorage.clear()
     return (
       <div className="main-page">
+      <h1 className="lookup">Welcome to Ali Abdulle PartShortage page! Please sign up to navigate the pages!!! </h1>
         <div className="card-body">
           <section className="card-title">
             <form onSubmit={this.checkLogin}>
-              <h1 className="LoginEmail">Sign In</h1>
+              <h3 className="LoginEmail">Sign In</h3>
               <label>
                 <input
                   onChange={this.handleFieldChange}

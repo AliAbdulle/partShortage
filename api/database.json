@@ -99,7 +99,7 @@
       "description": "Picture and audio fixer",
       "address": "",
       "productTypeId": 2,
-      "phaseTypeId": 1,
+      "phaseTypeId": 2,
       "quantity": 22,
       "id": 47
     },
@@ -132,6 +132,26 @@
       "productTypeId": 1,
       "phaseTypeId": 3,
       "quantity": 566
+    },
+    {
+      "id": 54,
+      "name": "Jessica Younkered",
+      "img": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1526&q=80",
+      "description": "Wooow",
+      "address": "500 interstat",
+      "productTypeId": 3,
+      "phaseTypeId": 3,
+      "quantity": 21
+    },
+    {
+      "id": 55,
+      "name": "Phone",
+      "img": "https://images.unsplash.com/photo-1531312267124-cd1f431feb1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
+      "description": "iphone 7",
+      "address": "1261 Class room check",
+      "productTypeId": 4,
+      "phaseTypeId": 3,
+      "quantity": 7
     }
   ],
   "productTypes": [

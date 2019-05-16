@@ -44,7 +44,7 @@ export default class ProductForm extends Component {
       <React.Fragment>
         <form className="productForm">
           <div className="form-group">
-            <label htmlFor="name">product Name</label>
+            <label htmlFor="name">Product Name</label>
             <input
               type="text"
               required
@@ -55,7 +55,7 @@ export default class ProductForm extends Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="img">product Image</label>
+            <label htmlFor="img">Product Image</label>
             <input
               type="text"
               required
