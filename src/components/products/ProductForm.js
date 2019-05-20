@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Button} from 'reactstrap'
 import "./product.css"
 
 export default class ProductForm extends Component {
@@ -118,13 +119,13 @@ export default class ProductForm extends Component {
               placeholder=""
             />
           </div>
-          <button
+          <Button
             type="submit"
             onClick={this.constructNewProduct}
             className="btn btn-primary"
           >
             Submit
-          </button>
+          </Button>
         </form>
       </React.Fragment>
     );

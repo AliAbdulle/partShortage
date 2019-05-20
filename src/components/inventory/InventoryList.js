@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Button, Card} from 'reactstrap'
 import "./inventory.css";
 
 
@@ -34,7 +35,7 @@ export default class InventoryList  extends Component {
           <div id="wrapper">
             <article className="inventory">
             {this.props.inventory.map(item => (
-            <div key={item.id} className="card">
+            <Card key={item.id} className="card">
               <div className="card-body">
                 <section className="card-title">
                   <h5> {item.name}</h5>
@@ -43,33 +44,33 @@ export default class InventoryList  extends Component {
                   <h6>{item.address}</h6>
                   <h6>{item.productTypeId.name}</h6>
                   <p>{item.quantity}</p>
-                  <button
+                  <Button
                     // remove all the input and card that showing the inventory
                     onClick={() => this.props.deleteInventory(item.id)}
                     className="card-delete"
                   >
                     Delete
-                  </button>
-                  <button
+                  </Button>
+                  <Button
                     onClick={() => {
-                      //when the button click  edit form will be open
+                      //when the Button click  edit form will be open
                       this.props.history.push(`/inventory/${item.id}/edit`)
                     }}
                     className="card-edit"
                   >
                     Update
-                  </button>
-                  <button
+                  </Button>
+                  <Button
                     id={item.id}
                     onClick={this.updateExistingComponent}
                     // will push the card to next page
                     className="card-forword"
                   >
                     Forward
-                  </button>
+                  </Button>
                   </section>
                   </div>
-                  </div>
+                  </Card>
                  ) )}
             </article>
             </div>

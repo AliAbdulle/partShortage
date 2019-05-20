@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Button, Card} from 'reactstrap'
 import "./product.css";
 
 
@@ -35,7 +36,7 @@ export default class ProductList extends Component {
     return (
       <React.Fragment>
         <div className="productButton">
-          <button
+          <Button
             type="button"
 
             className="btn btn-success"
@@ -44,12 +45,12 @@ export default class ProductList extends Component {
             }}
           >
             Please Add New Product!
-          </button>
+          </Button>
         </div>
             <div id="wrapper">
         <article className="products">
           {this.props.products.map(product => (
-            <div key={product.id} className="card">
+            <Card key={product.id} className="card">
               <div className="card-body">
                 <section className="card-title">
                   <h5> {product.name}</h5>
@@ -58,14 +59,14 @@ export default class ProductList extends Component {
                   <h6>{product.address}</h6>
                   <h6>{product.productTypeId.name}</h6>
                   <p>{product.quantity}</p>
-                  <button
+                  <Button
                   //deleting form product page
                     onClick={() => this.props.deleteProduct(product.id)}
                     className="card-delete"
                   >
                     Delete
-                  </button>
-                  <button
+                  </Button>
+                  <Button
                     onClick={() => {
                       //edite exisiting form
                       this.props.history.push(`/products/${product.id}/edit`)
@@ -73,18 +74,18 @@ export default class ProductList extends Component {
                     className="card-edit"
                   >
                     Update
-                  </button>
-                  <button
+                  </Button>
+                  <Button
                     id={product.id}
                     //forward to inventory page
                     onClick={this.updateExistingComponent}
                     className="card-forword"
                   >
                     Forward
-                  </button>
+                  </Button>
                 </section>
               </div>
-            </div>
+            </Card>
 
 
           ))}
